@@ -16,7 +16,7 @@ function Header(props) {
             <Nav.Link href="/vision" >Vision</Nav.Link>
             <Nav.Link href="/sound">Sound</Nav.Link>
             <Nav.Link href="/talents">Talents</Nav.Link>
-          </Nav>
+          </Nav> 
         </Navbar.Collapse>
       </Container>
     </Navbar>
