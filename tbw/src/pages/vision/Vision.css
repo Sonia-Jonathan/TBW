@@ -1,0 +1,23 @@
+.bg-vision{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(8,10,13,1) 0%, rgba(63,79,104,1) 100%);
+}
+
+.bg-img{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-0{
+    background-image: url("https://wallpapers.com/images/hd/black-pyramid-neon-retro-wave-outline-u5n90eav84sjz2ku.jpg");
+}
+
+.bg-img-1{
+    background-image: url("https://i.pinimg.com/originals/ad/92/b3/ad92b38fce116c954c5d71be6d5e67bf.jpg");
+}
+
+.bg-img-2{
+    background-image: url("https://wallpapers.com/images/hd/synthwave-city-xvs5tnxctjz3ebdr.jpg");
+}
+

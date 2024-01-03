@@ -11,7 +11,7 @@ function BlocText(props) {
     const btn = props.btn
 
     return (
-        <div>
+        <div className='text-center'>
             <h1 className='white'>{title}</h1>
             <h2 className='white'>{subtitle}</h2>
             {link && (<a href={link.href} className='text-decoration-none blue'>{link.title}</a>)}
