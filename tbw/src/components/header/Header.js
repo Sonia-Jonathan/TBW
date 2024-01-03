@@ -9,8 +9,8 @@ function Header(props) {
     <Navbar expand="lg"  className="header">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="br" id="basic-navbar-nav">
-          <Nav className="br  col-lg-6 justify-content-center m-auto">
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="col-lg-6 justify-content-center m-auto">
           <Navbar.Brand href="/" className=" text-white">TBW</Navbar.Brand>
             <Nav.Link className="text-white" href="/vision" >Vision</Nav.Link>
             <Nav.Link className="text-white" href="/sound">Sound</Nav.Link>
