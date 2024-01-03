@@ -1,8 +1,11 @@
 import React from 'react';
 
+import "./Talents.css";
+
+
 function Talents(props) {
     return (
-        <div>
+        <div className='bg-talents'>
             talents
         </div>
     );

@@ -1,7 +1,6 @@
 .header{
     background-color: #090b0e;
-    position: absolute;
+    position: relative;
     margin: auto;
-    position: fixed;
     width: 100%;
 }
