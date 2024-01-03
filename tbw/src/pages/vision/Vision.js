@@ -33,7 +33,7 @@ function Vision(props) {
             {blocText && (
                 <div>
                     {blocText.map((value, i) => (
-                        <div className={`bg-img bg-img-${i} col-lg-12 d-flex justify-content-center align-items-lg-end`}>
+                        <div className={`bg-img bg-img-${i} col-lg-12 d-flex justify-content-center align-items-end`}>
                             <div className='col-lg-3 my-5'>
                                 <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
