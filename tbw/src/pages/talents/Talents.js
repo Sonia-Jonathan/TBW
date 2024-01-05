@@ -26,6 +26,7 @@ function Talents(props) {
             src : "https://egeriephotographies.com/wp-content/uploads/2020/04/Femme.jpg",
             alt : ""
         },
+    
     ]
     return (
         <div className='bg-talents pb-5'>
@@ -41,8 +42,8 @@ function Talents(props) {
                 </div>
             )}
 
-            <div >
-                    <ImgTalents dataSrc={dataSrc}/>
+            <div>
+                <ImgTalents dataSrc={dataSrc}/>
             </div>
 
         </div>
