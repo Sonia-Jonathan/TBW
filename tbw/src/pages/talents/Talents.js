@@ -2,6 +2,7 @@ import React from 'react';
 
 import "./Talents.css";
 import BlocText from '../../components/blockText/BlocText';
+import ImgTalents from '../../components/imgTalents/ImgTalents';
 
 
 function Talents(props) {
@@ -10,6 +11,21 @@ function Talents(props) {
             title: "Talents",
             subtitle: "Graine de génie.",
         }
+    ]
+
+    const dataSrc = [
+        {
+            src : "https://img.freepik.com/photos-premium/portrait-jeune-femme-mexicaine_79390-494.jpg",
+            alt : ""
+        },
+        {
+            src : "https://us.123rf.com/450wm/nuevoimg/nuevoimg2309/nuevoimg230902059/212246214-portrait-d-un-beau-jeune-homme-avec-barbe-et-moustache-mode-beaut%C3%A9-pour-hommes.jpg?ver=6",
+            alt : ""
+        },
+        {
+            src : "https://egeriephotographies.com/wp-content/uploads/2020/04/Femme.jpg",
+            alt : ""
+        },
     ]
     return (
         <div className='bg-talents pb-5'>
@@ -25,21 +41,8 @@ function Talents(props) {
                 </div>
             )}
 
-            <div className='mt-5 pb-5 d-flex justify-content-center col-lg-12'>
-                <div className='d-flex  justify-content-around col-lg-9'>
-                    <div className='col-lg-3'>
-                        <img className='img-talents' src='https://img.freepik.com/photos-premium/portrait-jeune-femme-mexicaine_79390-494.jpg' alt='' />
-                    </div>
-
-                    <div className='col-lg-3'>
-                        <img className='img-talents' src='https://us.123rf.com/450wm/nuevoimg/nuevoimg2309/nuevoimg230902059/212246214-portrait-d-un-beau-jeune-homme-avec-barbe-et-moustache-mode-beaut%C3%A9-pour-hommes.jpg?ver=6' alt='' />
-                    </div>
-
-                    <div className='col-lg-3'>
-                        <img className='img-talents' src='https://egeriephotographies.com/wp-content/uploads/2020/04/Femme.jpg' alt='' />
-                    </div>
-
-                </div>
+            <div >
+                    <ImgTalents dataSrc={dataSrc}/>
             </div>
 
         </div>
