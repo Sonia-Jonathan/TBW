@@ -15,9 +15,9 @@ function Home(props) {
         },
     ];
     return (
-        <div>
+        <div className=" bg-home">
             {blocText && (
-                <div className="text-center py-lg-3 bg-home">
+                <div className="text-center">
                     {blocText.map((value,i) => (
                         <BlocText key={i} title={value.title} subtitle={value.subtitle} link={value.link} />
                     ))}

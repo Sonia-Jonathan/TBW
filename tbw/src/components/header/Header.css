@@ -1,6 +1,12 @@
 .header{
-    background-color: #090b0e;
-    position: relative;
+    background-color: transparent;
+    position:fixed;
     margin: auto;
     width: 100%;
+    z-index: 0;
+}
+
+.header-bg{
+    background-color: black;
+    opacity: 0.96;
 }
