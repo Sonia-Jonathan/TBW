@@ -30,7 +30,7 @@ function Sound(props) {
     ]
 
     return (
-        <div className='bg-sound pt-2'>
+        <div className='bg-sound'>
            {blocTexTitle && (
                 <div className='blocTitle'>
                     {blocTexTitle.map((value, i) => (
