@@ -6,11 +6,11 @@ function ImgTalents(props) {
 
     const dataSrc = props.dataSrc
     return (
-        <div className='mt-5 pb-5 d-flex justify-content-center col-lg-12'>
+        <div className='pb-5 d-flex justify-content-center col-lg-12'>
             {dataSrc && (
-                <div className='d-flex  justify-content-around col-lg-9'>
+                <div className='text-center d-flex justify-content-around row-img col-lg-9'>
                     {dataSrc.map((value, i) => (
-                        <div key={i} className='col-lg-3'>
+                        <div key={i} className='mt-5 col-lg-4'>
                             <img className='img-talents' src={value.src} alt={value.alt} />
                         </div>
                     ))}
