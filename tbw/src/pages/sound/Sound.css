@@ -9,3 +9,8 @@ background: linear-gradient(180deg, rgba(5,25,2,1) 0%, rgba(0,0,0,1) 50%, rgba(8
     height: 400px;
     background-color: white;
 }
+
+.br{
+    outline: 2px solid red;
+}
+
