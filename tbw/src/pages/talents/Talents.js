@@ -3,7 +3,6 @@ import React from 'react';
 import "./Talents.css";
 import BlocText from '../../components/blockText/BlocText';
 import ImgTalents from '../../components/imgTalents/ImgTalents';
-import FlipCard from './FlipCard';
 
 
 function Talents(props) {
@@ -44,7 +43,7 @@ function Talents(props) {
             )}
 
             <div>
-                <FlipCard />
+                <ImgTalents dataSrc={dataSrc}/>
             </div>
 
         </div>
