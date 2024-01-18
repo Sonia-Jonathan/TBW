@@ -25,10 +25,10 @@ function Header(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="col-lg-6 justify-content-center m-auto">
-          <Navbar.Brand href="/" className=" text-white">TBW</Navbar.Brand>
-            <Nav.Link className="text-white" href="/vision" >Vision</Nav.Link>
-            <Nav.Link className="text-white" href="/sound">Sound</Nav.Link>
-            <Nav.Link className="text-white" href="/talents">Talents</Nav.Link>
+          <Navbar.Brand href="/" className="neon-text-navbar text-white">TBW</Navbar.Brand>
+            <Nav.Link className="neon-text-navbar text-white" href="/vision" >Vision</Nav.Link>
+            <Nav.Link className="neon-text-navbar text-white" href="/sound">Sound</Nav.Link>
+            <Nav.Link className="neon-text-navbar text-white" href="/talents">Talents</Nav.Link>
           </Nav> 
         </Navbar.Collapse>
       </Container>

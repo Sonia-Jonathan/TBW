@@ -43,9 +43,12 @@ function Sound(props) {
                 </div>
             )}
 
-            <div className='d-flex justify-content-center pb-5'>
-                <div className='col-lg-10 text-center playlist'>Playlist</div>
+            <div className='pt-5' style={{textAlign:'center'}}>
+                <iframe width="60%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/user-994437473/sets/miles-morales-playlist?si=1c21fb318c564be7a5aebd25ca49367e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                </iframe>
             </div>
+            
+
 
             {blocText && (
                 <div className='mt-5 d-flex  justify-content-around py-5'>
