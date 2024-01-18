@@ -18,11 +18,11 @@ function App() {
       {window.location.pathname === '/vision/clips' ? null : <Header />}      
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/vision" element={<Vision />} />
-        <Route path="/vision/clips" element={<Clips />} />
-        <Route path="/sound" element={<Sound />} />
-        <Route path="/talents" element={<Talents />} />
-        <Route path="/*" element={<Page404 />} />
+        <Route path="vision" element={<Vision />} />
+        <Route path="vision/clips" element={<Clips />} />
+        <Route path="sound" element={<Sound />} />
+        <Route path="talents" element={<Talents />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </BrowserRouter>

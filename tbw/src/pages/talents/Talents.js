@@ -44,7 +44,7 @@ function Talents(props) {
             )}
 
             <div>
-                <FlipCard dataSrc={dataSrc}/>
+                <FlipCard />
             </div>
 
         </div>
