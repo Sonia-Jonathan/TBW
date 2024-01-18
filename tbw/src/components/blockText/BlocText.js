@@ -17,7 +17,7 @@ function BlocText(props) {
             {link && (<a href={link.href} className='text-decoration-none blue'>{link.title}</a>)}
             {btn && (
                 <div className='mt-2'>
-                    <Button variant="outline-light" className='btn px-4'>{btn.title}</Button>
+                    <a href={btn.link}><Button variant="outline-light" className='btn px-4'>{btn.title}</Button></a>
                 </div>
             )}
             

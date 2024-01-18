@@ -4,13 +4,16 @@ import "./Vision.css";
 
 import BlocText from '../../components/blockText/BlocText';
 
+import clipsVideo from '../../asset/videos/clipsVideo.mp4'
+
 function Vision(props) {
     const blocText = [
         {
             title: "Clips",
             subtitle: "A travers le son.",
             btn: {
-                title: "Regarder"
+                title: "Regarder",
+                link: "/vision/clips"
             }
         },
         {
@@ -28,13 +31,41 @@ function Vision(props) {
             }
         }
     ]
+
+    const videos = [
+        {
+            video1: clipsVideo,
+
+        },
+        {
+            video1: clipsVideo,
+
+        },
+        {
+            video1: clipsVideo,
+
+        },
+    ]
     return (
         <div className='bg-vision'>
             {blocText && (
                 <div>
                     {blocText.map((value, i) => (
-                        <div key={i} className={`bg-img bg-img-${i} col-lg-12 d-flex justify-content-center align-items-end`}>
-                            <div className='col-lg-3 my-5'>
+                        // bg-img-${i}
+                        <div key={i} className="d-flex   align-items-end">
+                            {videos && (
+
+                                <div className='bloc-video col-lg-12 m-auto'>
+                                    {videos.map((val, j) => (
+                                        <div >
+                                                {j == i ? (<video className=" bg-video" key={i} src={val.video1} autoPlay loop muted />) : null}
+                                                
+                                        </div>
+                                        
+                                    ))}
+                                </div>
+                            )}
+                            <div className=' block-text col-lg-12 my-5'>
                                 <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
                         </div>

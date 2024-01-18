@@ -1,8 +1,17 @@
 .bg-vision{
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(8,10,13,1) 0%, rgba(63,79,104,1) 100%);
     min-height: 100vh;
+}
 
+.bloc-video{
+ height: 100vh;
+}
+.bg-video{
+    width: 100%;
+    object-fit: cover;
+}
+
+.block-text{
+    position: absolute;
 }
 
 .bg-img{

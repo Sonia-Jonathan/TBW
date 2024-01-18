@@ -8,21 +8,23 @@ import Page404 from "./pages/page404/Page404";
 import Sound from "./pages/sound/Sound";
 import Talents from "./pages/talents/Talents";
 import Vision from "./pages/vision/Vision";
+import Clips from "./pages/vision/clips/Clips";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-    <Header/>
+      {window.location.pathname === '/vision/clips' ? null : <Header />}      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/vision" element={<Vision />} />
-        <Route path="sound" element={<Sound />} />
-        <Route path="talents" element={<Talents />} />
-        <Route path="*" element={<Page404 />} />
+        <Route path="/vision/clips" element={<Clips />} />
+        <Route path="/sound" element={<Sound />} />
+        <Route path="/talents" element={<Talents />} />
+        <Route path="/*" element={<Page404 />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
