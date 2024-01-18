@@ -46,6 +46,8 @@ function Vision(props) {
 
         },
     ]
+
+
     return (
         <div className='bg-vision'>
             {blocText && (
@@ -58,7 +60,9 @@ function Vision(props) {
                                 <div className='bloc-video col-lg-12 m-auto'>
                                     {videos.map((val, j) => (
                                         <div >
-                                            {j == i ? (<video className=" bg-video" key={i} src={val.video1} autoPlay loop muted />) : null}
+                                            {j == i ? (
+                                                <video className=" bg-video" key={j} src={val.video1} autoPlay loop muted />
+                                            ) : null}
 
                                         </div>
 
