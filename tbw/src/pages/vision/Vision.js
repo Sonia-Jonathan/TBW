@@ -13,7 +13,7 @@ function Vision(props) {
             subtitle: "A travers le son.",
             btn: {
                 title: "Regarder",
-                link: "/vision/clips"
+                link: "vision/clips"
             }
         },
         {
@@ -58,15 +58,15 @@ function Vision(props) {
                                 <div className='bloc-video col-lg-12 m-auto'>
                                     {videos.map((val, j) => (
                                         <div >
-                                                {j == i ? (<video className=" bg-video" key={i} src={val.video1} autoPlay loop muted />) : null}
-                                                
+                                            {j == i ? (<video className=" bg-video" key={i} src={val.video1} autoPlay loop muted />) : null}
+
                                         </div>
-                                        
+
                                     ))}
                                 </div>
                             )}
-                            <div className=' block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
+                            <div className='block-text col-lg-12 my-5'>
+                                <BlocText className='text' key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
                         </div>
                     ))}
