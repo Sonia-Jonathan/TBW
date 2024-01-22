@@ -2,9 +2,15 @@ import React from 'react';
 
 import "./Vision.css";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import BlocText from '../../components/blockText/BlocText';
 
 import clipsVideo from '../../asset/videos/clipsVideo.mp4'
+
+import Slider from "react-slick";
+
 
 function Vision(props) {
     const blocText = [
@@ -32,20 +38,33 @@ function Vision(props) {
         }
     ]
 
-    const videos = [
+    const visionData = [
         {
+            type: "video",
             video1: clipsVideo,
 
         },
         {
+            type: "carousel",
             video1: clipsVideo,
 
         },
         {
+            type: "video",
             video1: clipsVideo,
 
         },
     ]
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        autoplay: true,
+        speed: 3000,
+        autoplaySpeed: 1000,
+        cssEase: "linear"
+    };
 
 
     return (
@@ -55,14 +74,44 @@ function Vision(props) {
                     {blocText.map((value, i) => (
                         // bg-img-${i}
                         <div key={i} className="d-flex   align-items-end">
-                            {videos && (
+                            {visionData && (
 
                                 <div className='bloc-video col-lg-12 m-auto'>
-                                    {videos.map((val, j) => (
+                                    {visionData.map((val, j) => (
                                         <div >
-                                            {j == i ? (
-                                                <video className=" bg-video" key={j} src={val.video1} autoPlay loop muted />
-                                            ) : null}
+                                            {j == i ?
+                                                (
+                                                    <div>
+                                                        {val.type == "video" ? (
+                                                            <video className=" bg-video" key={j} src={val.video1} autoPlay loop muted />
+                                                        ) : null}
+
+                                                        {/* Carousel */}
+                                                        {val.type == "carousel" ? (
+                                                                <Slider className='slick' {...settings}>
+                                                                    <div>
+                                                                        <img height={703} width={1704} src="https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg" alt=""/>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h3>2</h3>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h3>3</h3>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h3>4</h3>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h3>5</h3>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h3>6</h3>
+                                                                    </div>
+                                                                </Slider>
+                                                        ) : null}
+                                                    </div>
+                                                )
+                                                : null}
 
                                         </div>
 
