@@ -43,15 +43,15 @@ function Sound(props) {
                 </div>
             )}
 
-            <div className='pt-5' style={{textAlign:'center'}}>
-                <iframe width="60%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/user-994437473/sets/miles-morales-playlist?si=1c21fb318c564be7a5aebd25ca49367e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+            <div className='pt-lg-1 col-lg-12' style={{textAlign:'center'}}>
+                <iframe className='col-lg-9 playlist'  scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/user-994437473/sets/miles-morales-playlist?si=1c21fb318c564be7a5aebd25ca49367e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
                 </iframe>
             </div>
             
 
 
             {blocText && (
-                <div className='mt-5 d-flex  justify-content-around py-5'>
+                <div className='bloc-text d-flex  justify-content-around py-5'>
                     {blocText.map((val, j) => (
                         <div key={j} className="col-lg-3 pb-5">
                             <div>
