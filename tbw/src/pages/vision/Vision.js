@@ -4,7 +4,7 @@ import "./Vision.css";
 
 import BlocText from '../../components/blockText/BlocText';
 
-// import clipsVideo from '../../asset/videos/clipsVideo.mp4'
+import clipsVideo from '../../asset/videos/clipsVideo.mp4'
 
 function Vision(props) {
     const blocText = [
@@ -55,7 +55,7 @@ function Vision(props) {
                     {blocText.map((value, i) => (
                         // bg-img-${i}
                         <div key={i} className="d-flex   align-items-end">
-                            {/* {videos && (
+                            {videos && (
 
                                 <div className='bloc-video col-lg-12 m-auto'>
                                     {videos.map((val, j) => (
@@ -68,7 +68,7 @@ function Vision(props) {
 
                                     ))}
                                 </div>
-                            )} */}
+                            )}
                             <div className='block-text col-lg-12 my-5'>
                                 <BlocText className='text' key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
