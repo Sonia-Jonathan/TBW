@@ -9,7 +9,8 @@ import BlocText from '../../components/blockText/BlocText';
 
 import clipsVideo from '../../asset/videos/clipsVideo.mp4'
 
-import Slider from "react-slick";
+import Carousel from 'react-bootstrap/Carousel';
+
 
 
 function Vision(props) {
@@ -63,7 +64,7 @@ function Vision(props) {
         autoplay: true,
         speed: 3000,
         autoplaySpeed: 1000,
-        cssEase: "linear"
+        cssEase: "linear",
     };
 
 
@@ -76,7 +77,7 @@ function Vision(props) {
                         <div key={i} className="d-flex   align-items-end">
                             {visionData && (
 
-                                <div className='bloc-video col-lg-12 m-auto'>
+                                <div className='bloc-video col-lg-12 '>
                                     {visionData.map((val, j) => (
                                         <div >
                                             {j == i ?
@@ -88,26 +89,20 @@ function Vision(props) {
 
                                                         {/* Carousel */}
                                                         {val.type == "carousel" ? (
-                                                                <Slider className='slick' {...settings}>
-                                                                    <div>
-                                                                        <img height={703} width={1704} src="https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg" alt=""/>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h3>2</h3>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h3>3</h3>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h3>4</h3>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h3>5</h3>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h3>6</h3>
-                                                                    </div>
-                                                                </Slider>
+                                                            <div>
+                                                                <Carousel controls={false} indicators={false}>
+                                                                    <Carousel.Item interval={1000}>
+                                                                        <img className='slide-img' src="https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg" alt="" />
+                                                                    </Carousel.Item>
+                                                                    <Carousel.Item interval={1000}>
+                                                                        <img className='slide-img' src="https://img2.wallspic.com/crops/1/9/0/4091/4091-riviere-neige-congelation-glace-la_photographie_de_paysage-1920x1080.jpg" alt="" />
+                                                                    </Carousel.Item>
+                                                                    <Carousel.Item interval={1000}>
+                                                                        <img className='slide-img' src="https://img-19.commentcamarche.net/wzKKufHO7dLH-WPFdXJHEmOmi7E=/1500x/smart/2d8c2b30aee345008ee860087f8bcdc9/ccmcms-commentcamarche/36120212.jpg" alt="" />
+                                                                    </Carousel.Item>
+                                                                </Carousel>
+                                                            </div>
+
                                                         ) : null}
                                                     </div>
                                                 )
