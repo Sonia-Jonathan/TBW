@@ -2,9 +2,6 @@ import React from 'react';
 
 import "./Vision.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import BlocText from '../../components/blockText/BlocText';
 
 import clipsVideo from '../../asset/videos/clipsVideo.mp4'
