@@ -88,13 +88,13 @@ function Vision(props) {
                                                         {val.type == "carousel" ? (
                                                             <div>
                                                                 <Carousel controls={false} indicators={false}>
-                                                                    <Carousel.Item interval={1000}>
+                                                                    <Carousel.Item interval={800}>
                                                                         <img className='slide-img' src="https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg" alt="" />
                                                                     </Carousel.Item>
-                                                                    <Carousel.Item interval={1000}>
+                                                                    <Carousel.Item interval={800}>
                                                                         <img className='slide-img' src="https://img2.wallspic.com/crops/1/9/0/4091/4091-riviere-neige-congelation-glace-la_photographie_de_paysage-1920x1080.jpg" alt="" />
                                                                     </Carousel.Item>
-                                                                    <Carousel.Item interval={1000}>
+                                                                    <Carousel.Item interval={800}>
                                                                         <img className='slide-img' src="https://img-19.commentcamarche.net/wzKKufHO7dLH-WPFdXJHEmOmi7E=/1500x/smart/2d8c2b30aee345008ee860087f8bcdc9/ccmcms-commentcamarche/36120212.jpg" alt="" />
                                                                     </Carousel.Item>
                                                                 </Carousel>
