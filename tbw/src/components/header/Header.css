@@ -9,6 +9,7 @@
 .header-bg{
     opacity: 0.96;
     backdrop-filter: blur(30px);
+    background-color: #1616178f;
 }
 
 .neon-text-navbar:hover {
