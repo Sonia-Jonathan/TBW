@@ -24,7 +24,8 @@ function Sound(props) {
             title: "Sons",
             subtitle: "Titres uniques.",
             btn: {
-                title: "Écouter"
+                title: "Écouter",
+                link: "sound/UniqueTitles"
             }
         }
     ]

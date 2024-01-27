@@ -11,6 +11,8 @@ import Vision from "./pages/vision/Vision";
 import Clips from "./pages/vision/clips/Clips";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import UniqueTitles from "./pages/sound/UniqueTitles/UniqueTitles";
+
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <Route path="vision/clips" element={<Clips />} />
         <Route path="sound" element={<Sound />} />
         <Route path="talents" element={<Talents />} />
+        <Route path="sound/UniqueTitles" element={<UniqueTitles />} />
         <Route path="*" element={<Page404 />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
