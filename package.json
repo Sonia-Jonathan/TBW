@@ -1,4 +1,5 @@
 {
-  "dependencies": {
+  "devDependencies": {
+    "json-loader": "^0.5.7"
   }
 }

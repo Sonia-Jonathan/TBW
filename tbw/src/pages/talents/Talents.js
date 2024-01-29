@@ -4,6 +4,8 @@ import "./Talents.css";
 import BlocText from '../../components/blockText/BlocText';
 import ImgTalents from '../../components/imgTalents/ImgTalents';
 
+import talentDetails from '../../asset/json/talents/talentDetails.json'
+
 
 function Talents(props) {
     const blocTexTitle = [
@@ -13,21 +15,8 @@ function Talents(props) {
         }
     ]
 
-    const dataSrc = [
-        {
-            src : "https://img.freepik.com/photos-premium/portrait-jeune-femme-mexicaine_79390-494.jpg",
-            alt : ""
-        },
-        {
-            src : "https://us.123rf.com/450wm/nuevoimg/nuevoimg2309/nuevoimg230902059/212246214-portrait-d-un-beau-jeune-homme-avec-barbe-et-moustache-mode-beaut%C3%A9-pour-hommes.jpg?ver=6",
-            alt : ""
-        },
-        {
-            src : "https://egeriephotographies.com/wp-content/uploads/2020/04/Femme.jpg",
-            alt : ""
-        },
+    const dataSrc = talentDetails;
     
-    ]
     return (
         <div className='bg-talents pb-5'>
             {blocTexTitle && (

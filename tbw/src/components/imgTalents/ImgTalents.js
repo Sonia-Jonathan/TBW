@@ -5,6 +5,7 @@ import "./ImgTalents.css";
 function ImgTalents(props) {
 
     const dataSrc = props.dataSrc
+    
     return (
         <div className='pb-5 d-flex justify-content-center col-lg-12'>
             {dataSrc && (
