@@ -13,7 +13,7 @@ function CarouselFullscreen(props) {
                     <Carousel controls={false} indicators={false}>
                         {
                             img.map((value, i) => (
-                                <Carousel.Item interval={800}>
+                                <Carousel.Item interval={800} key={i}>
                                     <img className='slide-img' src={value.src} alt={value.alt} />
                                 </Carousel.Item>
                             ))

@@ -11,30 +11,50 @@ import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 
 
 function Vision(props) {
+
+    const clipsFunction = () => {
+        console.log("clips")
+    }
+
+    const picturesFunction = () => {
+        console.log("pictures")
+    }
+
+    const seriesFunction = () => {
+        console.log("series")
+    }
+    
     const blocText = [
         {
             title: "Clips",
             subtitle: "A travers le son.",
             btn: {
                 title: "Regarder",
-                link: "vision/clips"
+                link: "vision/clips",
+                function : clipsFunction
+            }
+        },
+        
+        {
+            title: "Pictures",
+            subtitle: "Du regard à l'imaginaire.",
+            btn: {
+                title: "Découvrir",
+                function : picturesFunction
             }
         },
         {
             title: "Series",
             subtitle: "Du jamais vu.",
             btn: {
-                title: "Regarder"
+                title: "Regarder",
+                function : seriesFunction
             }
         },
-        {
-            title: "Pictures",
-            subtitle: "Du regard à l'imaginaire.",
-            btn: {
-                title: "Découvrir"
-            }
-        }
-    ]
+    ];
+
+    
+    
 
     const visionData = [
         {
@@ -91,7 +111,7 @@ function Vision(props) {
 
                                 <div className='bloc-video col-lg-12 '>
                                     {visionData.map((val, j) => (
-                                        <div >
+                                        <div key={j}>
                                             {j == i ?
                                                 (
                                                     <div>

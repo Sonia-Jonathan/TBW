@@ -10,6 +10,12 @@ function BlocText(props) {
     const link = props.link
     const btn = props.btn
 
+    const handleClick = () => {
+        if (btn && btn.function) {
+            btn.function(); 
+        }
+    };
+
     return (
         <div className='bloc-text text-center'>
             <h1 className='white'>{title}</h1>
@@ -17,7 +23,7 @@ function BlocText(props) {
             {link && (<a href={link.href} className='text-decoration-none blue'>{link.title}</a>)}
             {btn && (
                 <div className='mt-2'>
-                    <a href={btn.link}><Button variant="outline-light" className='btn px-4'>{btn.title}</Button></a>
+                    <a  onClick={handleClick}><Button variant="outline-light" className='btn px-4'>{btn.title}</Button></a>
                 </div>
             )}
             
