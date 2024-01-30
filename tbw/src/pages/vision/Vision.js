@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import "./Vision.css";
 
@@ -12,8 +12,16 @@ import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 
 function Vision(props) {
 
+    const [clipsPlay, setClipsPlay] = useState(false);
+
+    const videoRef = useRef(null);
+
+
     const clipsFunction = () => {
-        console.log("clips")
+        const currentTime = videoRef.current.currentTime;
+        videoRef.current.pause();
+        console.log("Current time:", videoRef);
+        // setClipsPlay(true);
     }
 
     const picturesFunction = () => {
@@ -23,7 +31,7 @@ function Vision(props) {
     const seriesFunction = () => {
         console.log("series")
     }
-    
+
     const blocText = [
         {
             title: "Clips",
@@ -31,16 +39,16 @@ function Vision(props) {
             btn: {
                 title: "Regarder",
                 link: "vision/clips",
-                function : clipsFunction
+                function: clipsFunction
             }
         },
-        
+
         {
             title: "Pictures",
             subtitle: "Du regard à l'imaginaire.",
             btn: {
                 title: "Découvrir",
-                function : picturesFunction
+                function: picturesFunction
             }
         },
         {
@@ -48,16 +56,17 @@ function Vision(props) {
             subtitle: "Du jamais vu.",
             btn: {
                 title: "Regarder",
-                function : seriesFunction
+                function: seriesFunction
             }
         },
     ];
 
-    
-    
+
+
 
     const visionData = [
         {
+
             type: "video",
             video1: clipsVideo,
 
@@ -116,13 +125,13 @@ function Vision(props) {
                                                 (
                                                     <div>
                                                         {val.type == "video" ? (
-                                                            <video className=" bg-video" key={j} src={val.video1} autoPlay loop muted />
+                                                            <video ref={videoRef} className=" bg-video" key={j} src={val.video1} autoPlay loop muted />
                                                         ) : null}
 
                                                         {/* Carousel */}
                                                         {val.type == "carousel" ? (
                                                             <div>
-                                                                {val.img && (<CarouselFullscreen img={val.img}/>) }
+                                                                {val.img && (<CarouselFullscreen img={val.img} />)}
                                                             </div>
 
                                                         ) : null}
@@ -142,6 +151,23 @@ function Vision(props) {
                     ))}
                 </div>
             )}
+
+
+            {/* pop-up test
+            {
+                clipsPlay && (
+                    <div className='bg-pop '>
+                        <div className='bloc-video-pop col-lg-12'>
+                            <video className=" bg-video" src={clipsVideo} autoPlay loop controls/>
+
+                        </div>
+                        <div>
+                            <h1>hello</h1>
+                        </div>
+                    </div>
+                )
+            } */}
+
         </div>
     );
 }
