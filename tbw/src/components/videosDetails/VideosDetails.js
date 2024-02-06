@@ -6,7 +6,7 @@ function VideosDetails(props) {
     console.log(videosDetails)
 
     return (
-        <div className='bg-pop '>
+        <div>
             {videosDetails.map((value, i) => (
                 <div key={i}>
                     <div className='bloc-video col-lg-12'>

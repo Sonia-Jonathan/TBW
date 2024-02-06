@@ -182,9 +182,13 @@ function Vision(props) {
             )}
 
             {/* VIDEO LINKED*/}
-            {clipsPlay && videosDetails && (<VideosDetails videosDetails={videosDetails} />)}
+            {clipsPlay && videosDetails && (
+                <div className='bg-pop'>
+                    <VideosDetails videosDetails={videosDetails} />
+                </div>
+            )}
         </div>
-       
+
 
     );
 }
