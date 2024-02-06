@@ -1,14 +1,30 @@
 import React from 'react';
 
+import "./VideosDetails.css";
+
+import { FaArrowLeft } from "react-icons/fa6";
+
 function VideosDetails(props) {
 
     const videosDetails = props.videosDetails
-    console.log(videosDetails)
+    const clipsPlay = props.clipsPlay
+    const setClipsPlay = props.setClipsPlay
+
+    const goBack = () => {
+        setClipsPlay(false)
+    }
+
+
 
     return (
         <div>
+            <button onClick={goBack} className='arrow-back' >
+                <FaArrowLeft size="30px" />
+
+            </button>
             {videosDetails.map((value, i) => (
                 <div key={i}>
+
                     <div className='bloc-video col-lg-12'>
                         <video className=" bg-video" src={value.src} autoPlay loop controls muted />
 

@@ -1,5 +1,21 @@
-.bloc-video {
+.arrow-back{
+    background-color: transparent;
+    position:fixed;
+    margin: auto;
+    z-index: 1;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: none;
 
+}
+
+.arrow-back:hover{
+    opacity: 1;
+}
+.bloc-video {
     height: 100vh;
 }
 

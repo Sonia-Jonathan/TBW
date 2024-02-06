@@ -184,7 +184,7 @@ function Vision(props) {
             {/* VIDEO LINKED*/}
             {clipsPlay && videosDetails && (
                 <div className='bg-pop'>
-                    <VideosDetails videosDetails={videosDetails} />
+                    <VideosDetails videosDetails={videosDetails} clipsPlay={clipsPlay} setClipsPlay={setClipsPlay}/>
                 </div>
             )}
         </div>
