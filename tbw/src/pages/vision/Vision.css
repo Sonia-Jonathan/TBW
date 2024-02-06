@@ -29,19 +29,7 @@
     width: 100%;
 }
 
-/* Pop up test */
 
-.bg-pop{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    z-index: 7;
-    background-color: white;
-    min-height: 100vh;
-    width: 100%;
-
-    
-}
   
 /* 
 .bg-img-0{
