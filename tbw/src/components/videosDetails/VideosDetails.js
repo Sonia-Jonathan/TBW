@@ -4,6 +4,7 @@ import "./VideosDetails.css";
 
 import { FaArrowLeft } from "react-icons/fa6";
 
+
 function VideosDetails(props) {
 
     const videosDetails = props.videosDetails
@@ -14,6 +15,9 @@ function VideosDetails(props) {
         setClipsPlay(false)
     }
 
+    // const SEL = "bloc-video";
+    // const SECTION_SEL = `.${SEL}`;
+
 
 
     return (
@@ -22,7 +26,8 @@ function VideosDetails(props) {
                 <FaArrowLeft size="30px" />
 
             </button>
-            {videosDetails.map((value, i) => (
+            
+            {videosDetails.map((value, i) => ( 
                 <div key={i}>
 
                     <div className='bloc-video col-lg-12'>
@@ -38,7 +43,9 @@ function VideosDetails(props) {
                         </div>
                     ))}
                 </div>
-            ))}
+                ))}
+           
+
 
 
 

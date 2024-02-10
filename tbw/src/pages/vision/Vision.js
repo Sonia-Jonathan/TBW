@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import "./Vision.css";
 
@@ -101,6 +101,8 @@ function Vision(props) {
 
     return (
         <div className='bg-vision'>
+
+
             {/* CLIPS */}
             {clips && !clipsPlay && (
                 <div>
@@ -184,10 +186,11 @@ function Vision(props) {
             {/* VIDEO LINKED*/}
             {clipsPlay && videosDetails && (
                 <div className='bg-pop'>
-                    <VideosDetails videosDetails={videosDetails} clipsPlay={clipsPlay} setClipsPlay={setClipsPlay}/>
+                    <VideosDetails videosDetails={videosDetails} clipsPlay={clipsPlay} setClipsPlay={setClipsPlay} />
                 </div>
             )}
         </div>
+
 
 
     );
