@@ -12,6 +12,7 @@ import Clips from "./pages/vision/clips/Clips";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import UniqueTitles from "./pages/sound/UniqueTitles/UniqueTitles";
+import Store from "./pages/store/Store";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       {window.location.pathname === '/vision/clips' ? null : <Header />}      
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="store" element={<Store />} />
         <Route path="vision" element={<Vision />} />
         <Route path="vision/clips" element={<Clips />} />
         <Route path="music" element={<Sound />} />
