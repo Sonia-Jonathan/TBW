@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="vision" element={<Vision />} />
         <Route path="vision/clips" element={<Clips />} />
-        <Route path="sound" element={<Sound />} />
+        <Route path="music" element={<Sound />} />
         <Route path="talents" element={<Talents />} />
         <Route path="sound/UniqueTitles" element={<UniqueTitles />} />
         <Route path="*" element={<Page404 />} />
