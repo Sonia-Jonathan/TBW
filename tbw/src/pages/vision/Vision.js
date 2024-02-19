@@ -29,9 +29,9 @@ function Vision(props) {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
 
-    const picturesFunction = () => {
-        console.log("pictures")
-    }
+    // const picturesFunction = () => {
+    //     console.log("pictures")
+    // }
 
     const seriesFunction = () => {
         console.log("series")
@@ -71,33 +71,33 @@ function Vision(props) {
         }
     ]
 
-    const pictures = [
-        {
-            title: "Pictures",
-            subtitle: "Du regard à l'imaginaire.",
-            btn: {
-                title: "Découvrir",
-            },
-            img: [
-                {
-                    src: "https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg",
-                    alt: ""
+    // const pictures = [
+    //     {
+    //         title: "Pictures",
+    //         subtitle: "Du regard à l'imaginaire.",
+    //         btn: {
+    //             title: "Découvrir",
+    //         },
+    //         img: [
+    //             {
+    //                 src: "https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg",
+    //                 alt: ""
 
-                },
-                {
-                    src: "https://img2.wallspic.com/crops/1/9/0/4091/4091-riviere-neige-congelation-glace-la_photographie_de_paysage-1920x1080.jpg",
-                    alt: ""
+    //             },
+    //             {
+    //                 src: "https://img2.wallspic.com/crops/1/9/0/4091/4091-riviere-neige-congelation-glace-la_photographie_de_paysage-1920x1080.jpg",
+    //                 alt: ""
 
-                },
-                {
-                    src: "https://img-19.commentcamarche.net/wzKKufHO7dLH-WPFdXJHEmOmi7E=/1500x/smart/2d8c2b30aee345008ee860087f8bcdc9/ccmcms-commentcamarche/36120212.jpg",
-                    alt: ""
+    //             },
+    //             {
+    //                 src: "https://img-19.commentcamarche.net/wzKKufHO7dLH-WPFdXJHEmOmi7E=/1500x/smart/2d8c2b30aee345008ee860087f8bcdc9/ccmcms-commentcamarche/36120212.jpg",
+    //                 alt: ""
 
-                },
-            ]
+    //             },
+    //         ]
 
-        }
-    ]
+    //     }
+    // ]
 
     return (
         <div className='bg-vision'>
@@ -131,7 +131,7 @@ function Vision(props) {
             )}
 
             {/* PICTURES */}
-            {pictures && !clipsPlay && (
+            {/* {pictures && !clipsPlay && (
                 <div>
                     {pictures.map((value, i) => (
                         <div key={i} >
@@ -153,7 +153,7 @@ function Vision(props) {
                         </div>
                     ))}
                 </div>
-            )}
+            )} */}
 
             {/* CLIPS */}
             {clips && !clipsPlay && (
