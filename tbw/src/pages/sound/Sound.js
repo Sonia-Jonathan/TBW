@@ -5,8 +5,9 @@ import BlocText from '../../components/blockText/BlocText';
 function Sound(props) {
     const blocTexTitle = [
         {
-            title: "Beats",
-            subtitle: "Productions musicales.",
+            title: "Music",
+            // subtitle: "Productions musicales.",
+            subtitle: "For the soul.",
         }
     ];
 
