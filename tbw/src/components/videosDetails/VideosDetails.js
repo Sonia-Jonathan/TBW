@@ -30,24 +30,20 @@ function VideosDetails(props) {
             {videosDetails.map((value, i) => ( 
                 <div key={i}>
 
-                    <div className='bloc-video col-lg-12'>
+                    <section className='bloc-video col-lg-12'>
                         <video className=" bg-video" src={value.src} autoPlay loop controls muted />
 
-                    </div>
+                    </section>
 
                     {value.videosLinked.map((val, j) => (
                         <div key={j}>
-                            <div className='bloc-video col-lg-12'>
+                            <section className='bloc-video col-lg-12'>
                                 <video className=" bg-video" src={val.src} autoPlay loop controls muted />
-                            </div>
+                            </section>
                         </div>
                     ))}
                 </div>
                 ))}
-           
-
-
-
 
         </div>
     );

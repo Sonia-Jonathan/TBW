@@ -105,7 +105,7 @@ function Vision(props) {
 
             {/* CLIPS */}
             {clips && !clipsPlay && (
-                <div>
+                <section className='bg-vision-section'>
                     {clips.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
 
@@ -127,7 +127,7 @@ function Vision(props) {
 
                         </div>
                     ))}
-                </div>
+                </section>
             )}
 
             {/* PICTURES */}
@@ -157,7 +157,7 @@ function Vision(props) {
 
             {/* CLIPS */}
             {clips && !clipsPlay && (
-                <div>
+                <section className='bg-vision-section'>
                     {clips.map((value, i) => (
                         <div key={i} >
                             <div className="d-flex align-items-end">
@@ -180,7 +180,7 @@ function Vision(props) {
 
                         </div>
                     ))}
-                </div>
+                </section>
             )}
 
             {/* VIDEO LINKED*/}

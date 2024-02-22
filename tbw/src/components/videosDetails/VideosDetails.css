@@ -15,8 +15,16 @@
 .arrow-back:hover{
     opacity: 1;
 }
-.bloc-video {
+
+
+html{
+    scroll-snap-type: y mandatory;
+}
+
+
+section {
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 .bg-video {

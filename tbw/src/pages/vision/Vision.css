@@ -1,7 +1,17 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
 .bg-vision {
     min-height: 100vh;
 }
-    
+
 
 .bg-pop {
 
