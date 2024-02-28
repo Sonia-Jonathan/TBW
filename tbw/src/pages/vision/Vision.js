@@ -1,40 +1,17 @@
 import React, { useState } from 'react';
-
 import "./Vision.css";
-
 import BlocText from '../../components/blockText/BlocText';
-
-import clipsVideo from '../../asset/videos/clipsVideo.mp4'
-
 import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 import VideosDetails from '../../components/videosDetails/VideosDetails';
 
-
-
 function Vision(props) {
-
     const [clipsPlay, setClipsPlay] = useState(false);
     const [videosDetails, setVideosDetails] = useState("");
 
-
-    // const videoRef = useRef(null);
-
-
     const clipsFunction = () => {
-        // const currentTime = videoRef.current.currentTime;
-        // videoRef.current.pause();
-        // console.log("Current time:", videoRef);
         setClipsPlay(true);
-        setVideosDetails(clips[0].video)
+        setVideosDetails(clips[0].video);
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
-
-    // const picturesFunction = () => {
-    //     console.log("pictures")
-    // }
-
-    const seriesFunction = () => {
-        console.log("series")
     }
 
     const clips = [
@@ -48,151 +25,76 @@ function Vision(props) {
             },
             video: [
                 {
-                    src: clipsVideo,
+                    src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: clipsVideo
+                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: clipsVideo
+                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
                         }
                     ]
-
-                },
-
+                }
             ]
-
-
-
         }
-    ]
-
-    // const pictures = [
-    //     {
-    //         title: "Pictures",
-    //         subtitle: "Du regard à l'imaginaire.",
-    //         btn: {
-    //             title: "Découvrir",
-    //         },
-    //         img: [
-    //             {
-    //                 src: "https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg",
-    //                 alt: ""
-
-    //             },
-    //             {
-    //                 src: "https://img2.wallspic.com/crops/1/9/0/4091/4091-riviere-neige-congelation-glace-la_photographie_de_paysage-1920x1080.jpg",
-    //                 alt: ""
-
-    //             },
-    //             {
-    //                 src: "https://img-19.commentcamarche.net/wzKKufHO7dLH-WPFdXJHEmOmi7E=/1500x/smart/2d8c2b30aee345008ee860087f8bcdc9/ccmcms-commentcamarche/36120212.jpg",
-    //                 alt: ""
-
-    //             },
-    //         ]
-
-    //     }
-    // ]
+    ];
 
     return (
         <div className='bg-vision'>
-
-
-            {/* CLIPS */}
             {clips && !clipsPlay && (
                 <section className='bg-vision-section'>
                     {clips.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
-
                             {value.video && (
                                 <div className='bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
                                         <div key={j}>
-                                            <video className=" bg-video" src={val.src} autoPlay loop muted />
+                                            <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                     ))}
-
                                 </div>
                             )}
-
                             <div className='block-text col-lg-12 my-5'>
                                 <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
-
-
                         </div>
                     ))}
                 </section>
             )}
 
-            {/* PICTURES */}
-            {/* {pictures && !clipsPlay && (
-                <div>
-                    {pictures.map((value, i) => (
-                        <div key={i} >
-                            <div className="d-flex align-items-end">
-                                {value.img && (
-                                    <div className='bloc-video col-lg-12 '>
-                                        <div>
-                                            {value.img && (<CarouselFullscreen img={value.img} />)}
-                                        </div>
-                                    </div>
-                                )}
-
-                                <div className='block-text col-lg-12 my-5'>
-                                    <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
-                                </div>
-
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
-            )} */}
-
-            {/* CLIPS */}
             {clips && !clipsPlay && (
                 <section className='bg-vision-section'>
                     {clips.map((value, i) => (
-                        <div key={i} >
+                        <div key={i}>
                             <div className="d-flex align-items-end">
                                 {value.video && (
                                     <div className='bloc-video col-lg-12 '>
                                         {value.video.map((val, j) => (
                                             <div key={j}>
-                                                <video className=" bg-video" src={val.src} autoPlay loop muted />
+                                                <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         ))}
-
                                     </div>
                                 )}
-
                                 <div className='block-text col-lg-12 my-5'>
                                     <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                                 </div>
-
                             </div>
-
                         </div>
                     ))}
                 </section>
             )}
 
-            {/* VIDEO LINKED*/}
             {clipsPlay && videosDetails && (
                 <div className='bg-pop'>
                     <VideosDetails videosDetails={videosDetails} clipsPlay={clipsPlay} setClipsPlay={setClipsPlay} />
                 </div>
             )}
         </div>
-
-
-
     );
 }
 
