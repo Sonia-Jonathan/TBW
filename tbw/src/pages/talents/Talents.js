@@ -18,24 +18,24 @@ function Talents(props) {
     const dataSrc = talentDetails;
     
     return (
-        <div className='bg-talents pb-5'>
-            {blocTexTitle && (
-                <div>
-                    {blocTexTitle.map((value, i) => (
-                        <div key={i} className="col-lg-12 d-flex justify-content-center">
-                            <div>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
-
+        <div className='bg-talents'>
+        {blocTexTitle && (
             <div>
-                <ImgTalents dataSrc={dataSrc}/>
+                {blocTexTitle.map((value, i) => (
+                    <div key={i} className="col-lg-12 d-flex justify-content-center">
+                        <div>
+                            <BlocText key={i} title={value.title} subtitle={value.subtitle} />
+                        </div>
+                    </div>
+                ))}
             </div>
-
+        )}
+    
+        <div className="d-flex justify-content-center align-items-center" style={{ height: '725px'}}>
+            <ImgTalents dataSrc={dataSrc}/>
         </div>
+    </div>
+    
     );
 }
 
