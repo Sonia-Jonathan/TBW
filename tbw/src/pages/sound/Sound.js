@@ -6,7 +6,6 @@ function Sound(props) {
     const blocTexTitle = [
         {
             title: "Music",
-            // subtitle: "Productions musicales.",
             subtitle: "For the soul.",
         }
     ];
@@ -26,16 +25,17 @@ function Sound(props) {
             )}
 
             <div className='d-flex justify-content-center align-items-center' style={{ height: '80vh' }}>
-                <div style={{ textAlign: 'center', width:'50%',height: '80%' }}>
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        scrolling="no"
-                        frameBorder="no"
-                        allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1662498459&amp;color=%23050406&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
-                        style={{ borderRadius: '15px'}} // Ajout de la propriété border radius
-                    ></iframe>
+                <div className='sound-container'>
+                    <div className='sound-wrapper'>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            scrolling="no"
+                            frameBorder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1662498459&amp;color=%23050406&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                        ></iframe>
+                    </div>
                 </div>
             </div>
         </div>
