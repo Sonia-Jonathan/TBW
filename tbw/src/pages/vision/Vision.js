@@ -52,9 +52,26 @@ function Vision(props) {
                             {value.video && (
                                 <div className='bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
-                                        <div key={j}>
-                                            <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        // <div key={j}>
+                                        //     <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        // </div>
+
+                                        // <div style="position:relative;height:0;padding-bottom:56.25%"><iframe class='sproutvideo-player' src='https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75' style='position:absolute;width:100%;height:100%;left:0;top:0' frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'></iframe></div>
+
+
+                                        <div className='v-iframe'>
+                                            <iframe 
+                                                class='bg-video sproutvideo-player' 
+                                                src='https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&amp;background=true&amp;loop=true&amp;volume=0&amp;frameborder=0' 
+                                                style={{position:'absolute',width:'100%',height:'100%',left:0,top:0}}
+
+                                                allowfullscreen 
+                                                referrerpolicy='no-referrer-when-downgrade' 
+                                                title='Video Player'
+                                            >
+                                            </iframe>
                                         </div>
+
                                     ))}
                                 </div>
                             )}
