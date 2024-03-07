@@ -25,17 +25,17 @@ function Vision(props) {
             },
             video: [
                 {
-                    src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true",
+                    src: "https://videos.sproutvideo.com/embed/d390d7b61510e7c65a/c083544d59773c49?autoPlay=true&amp;showControls=false&amp;loop=true",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
+                            src: "https://videos.sproutvideo.com/embed/d390d7b61510e7c65a/c083544d59773c49?autoPlay=true&amp;showControls=false&amp;loop=true"
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
+                            src: "https://videos.sproutvideo.com/embed/d390d7b61510e7c65a/c083544d59773c49?autoPlay=true&amp;showControls=false&amp;loop=true"
                         }
                     ]
                 }
@@ -52,8 +52,8 @@ function Vision(props) {
                             {value.video && (
                                 <div className='bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
-                                        <div key={j}>
-                                            <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        <div key={j} className="video-wrapper">
+                                            <iframe className="bg-video" src={val.src} title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                     ))}
                                 </div>
@@ -74,8 +74,8 @@ function Vision(props) {
                                 {value.video && (
                                     <div className='bloc-video col-lg-12 '>
                                         {value.video.map((val, j) => (
-                                            <div key={j}>
-                                                <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div key={j} className="video-wrapper">
+                                                <iframe className="bg-video" src={val.src} title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         ))}
                                     </div>
