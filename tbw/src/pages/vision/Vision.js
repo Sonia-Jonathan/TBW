@@ -4,6 +4,7 @@ import BlocText from '../../components/blockText/BlocText';
 import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 import VideosDetails from '../../components/videosDetails/VideosDetails';
 
+
 function Vision(props) {
     const [clipsPlay, setClipsPlay] = useState(false);
     const [videosDetails, setVideosDetails] = useState("");
@@ -25,23 +26,25 @@ function Vision(props) {
             },
             video: [
                 {
-                    src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true",
+                    src: "",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
+                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&showControls=false&loop=true"
+                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
                         }
                     ]
                 }
             ]
         }
     ];
+
+
 
     return (
         <div className='bg-vision'>
@@ -52,25 +55,31 @@ function Vision(props) {
                             {value.video && (
                                 <div className='bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
-                                        // <div key={j}>
-                                        //     <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        // <div key={j} className="video-wrapper">
+                                        //     {/* allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; mute; background" allowfullscreen="allowfullscreen" referrerpolicy="no-referrer-when-downgrade" */}
+                                        //     <iframe 
+                                        //         className="bg-video" 
+                                        //         src={val.src} 
+                                        //         title="Video Player"
+                                        //     ></iframe>
                                         // </div>
 
-                                        // <div style="position:relative;height:0;padding-bottom:56.25%"><iframe class='sproutvideo-player' src='https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75' style='position:absolute;width:100%;height:100%;left:0;top:0' frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'></iframe></div>
+                                        // <div style={{position:'relative',height:0,paddingBottom:'56.25%'}}>
+                                        //     <iframe className='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true' style={{position:'absolute',width:'100%',height:'100%',left:0,top:0}} frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'>
+                                        //     </iframe></div>
 
-
-                                        <div className='v-iframe'>
-                                            <iframe 
-                                                class='bg-video sproutvideo-player' 
-                                                src='https://videos.sproutvideo.com/embed/0690d7b51b11e3cf8f/8a35ce9e56e23e75?autoPlay=true&amp;background=true&amp;loop=true&amp;volume=0&amp;frameborder=0' 
-                                                style={{position:'absolute',width:'100%',height:'100%',left:0,top:0}}
-
-                                                allowfullscreen 
-                                                referrerpolicy='no-referrer-when-downgrade' 
-                                                title='Video Player'
-                                            >
-                                            </iframe>
+                                        <div className="video-wrapper">
+                                            <iframe
+                                            className="bg-video" 
+                                                allow='autoplay; fullscreen'
+                                                allowFullScreen
+                                                src="https://player.vimeo.com/video/921746965?autoPlay=1&amp;loop=1&amp;muted=1"
+                                                title="Remonter OG"
+                                            ></iframe>
                                         </div>
+
+
+
 
                                     ))}
                                 </div>
@@ -86,20 +95,28 @@ function Vision(props) {
             {clips && !clipsPlay && (
                 <section className='bg-vision-section'>
                     {clips.map((value, i) => (
-                        <div key={i}>
-                            <div className="d-flex align-items-end">
-                                {value.video && (
-                                    <div className='bloc-video col-lg-12 '>
-                                        {value.video.map((val, j) => (
-                                            <div key={j}>
-                                                <iframe className=" bg-video" src={val.src} title="Video Player" width="640" height="360" frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                                <div className='block-text col-lg-12 my-5'>
-                                    <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
+                        <div key={i} className="d-flex align-items-end">
+                            {value.video && (
+                                <div className='bloc-video col-lg-12 '>
+                                    {value.video.map((val, j) => (
+                                        // <div key={j} className="video-wrapper">
+                                        //     <iframe 
+                                        //         className="bg-video" 
+                                        //         src={val.src} 
+                                        //         title="Video Player"
+                                        //     ></iframe>
+                                        // </div>
+                                        <div></div>
+
+                                        // <div style={{ position: 'relative', height: 0, paddingBottom: '56.25%' }}>
+                                        //     <iframe className='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true' style={{ position: 'absolute', width: '100%', height: '100%', left: 0, top: 0 }} frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'>
+                                        //     </iframe></div>
+
+                                    ))}
                                 </div>
+                            )}
+                            <div className='block-text col-lg-12 my-5'>
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
                             </div>
                         </div>
                     ))}
