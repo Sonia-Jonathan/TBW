@@ -26,7 +26,7 @@ function Vision(props) {
             },
             video: [
                 {
-                    src: "",
+                    src:"https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
                     videosLinked: [
                         {
                             title: "",
@@ -68,16 +68,24 @@ function Vision(props) {
                                         //     <iframe className='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true' style={{position:'absolute',width:'100%',height:'100%',left:0,top:0}} frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'>
                                         //     </iframe></div>
 
-                                        <div className="video-wrapper">
+                                        // <div className="video-wrapper">
+                                        //     <iframe
+                                        //     className="bg-video" 
+                                        //         allow='autoplay; fullscreen'
+
+                                        //         src="https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true"
+                                        //         title="Remonter OG"
+                                        //     ></iframe>
+                                        // </div>
+
+                                        <div className="video-wrapper" key={j}>
                                             <iframe
-                                            className="bg-video" 
-                                                allow='autoplay; fullscreen'
                                                 allowFullScreen
-                                                src="https://player.vimeo.com/video/921746965?autoPlay=1&amp;loop=1&amp;muted=1"
+                                                className="bg-video"
+                                                src={val.src} 
                                                 title="Remonter OG"
                                             ></iframe>
                                         </div>
-
 
 
 
