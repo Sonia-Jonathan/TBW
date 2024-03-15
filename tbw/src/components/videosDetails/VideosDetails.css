@@ -32,3 +32,8 @@ section {
     height: 100vh;
     object-fit: cover;
 }
+
+.video-details .video-wrapper{
+    border: 1px solid red;
+    pointer-events: auto;
+}

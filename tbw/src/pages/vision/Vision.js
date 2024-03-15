@@ -6,11 +6,11 @@ import VideosDetails from '../../components/videosDetails/VideosDetails';
 
 
 function Vision(props) {
-    const [clipsPlay, setClipsPlay] = useState(false);
+    const [play, setPlay] = useState(false);
     const [videosDetails, setVideosDetails] = useState("");
 
     const clipsFunction = () => {
-        setClipsPlay(true);
+        setPlay(true);
         setVideosDetails(clips[0].video);
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
@@ -21,12 +21,41 @@ function Vision(props) {
             subtitle: "A travers le son.",
             btn: {
                 title: "Regarder",
-                link: "vision/clips",
                 function: clipsFunction
             },
             video: [
                 {
-                    src:"https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
+                    // ?autoPlay=true&background=true&loop=true
+                    src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
+                    videosLinked: [
+                        {
+                            title: "",
+                            subtitle: "",
+                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                        },
+                        {
+                            title: "",
+                            subtitle: "",
+                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    const series = [
+        {
+            title: "Series",
+            subtitle: "Du jamais vu.",
+            btn: {
+                title: "Regarder",
+                function: clipsFunction
+            },
+            video: [
+                {
+                    // ?autoPlay=true&background=true&loop=true
+                    src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
                     videosLinked: [
                         {
                             title: "",
@@ -48,41 +77,19 @@ function Vision(props) {
 
     return (
         <div className='bg-vision'>
-            {clips && !clipsPlay && (
+            {clips && !play && (
                 <section className='bg-vision-section'>
                     {clips.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
-                                <div className='bloc-video col-lg-12 '>
+                                <div className=' bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
-                                        // <div key={j} className="video-wrapper">
-                                        //     {/* allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; mute; background" allowfullscreen="allowfullscreen" referrerpolicy="no-referrer-when-downgrade" */}
-                                        //     <iframe 
-                                        //         className="bg-video" 
-                                        //         src={val.src} 
-                                        //         title="Video Player"
-                                        //     ></iframe>
-                                        // </div>
-
-                                        // <div style={{position:'relative',height:0,paddingBottom:'56.25%'}}>
-                                        //     <iframe className='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true' style={{position:'absolute',width:'100%',height:'100%',left:0,top:0}} frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'>
-                                        //     </iframe></div>
-
-                                        // <div className="video-wrapper">
-                                        //     <iframe
-                                        //     className="bg-video" 
-                                        //         allow='autoplay; fullscreen'
-
-                                        //         src="https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true"
-                                        //         title="Remonter OG"
-                                        //     ></iframe>
-                                        // </div>
 
                                         <div className="video-wrapper" key={j}>
                                             <iframe
                                                 allowFullScreen
                                                 className="bg-video"
-                                                src={val.src} 
+                                                src={val.src}
                                                 title="Remonter OG"
                                             ></iframe>
                                         </div>
@@ -100,25 +107,22 @@ function Vision(props) {
                 </section>
             )}
 
-            {clips && !clipsPlay && (
+            {series && !play && (
                 <section className='bg-vision-section'>
-                    {clips.map((value, i) => (
+                    {series.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
                                 <div className='bloc-video col-lg-12 '>
                                     {value.video.map((val, j) => (
-                                        // <div key={j} className="video-wrapper">
-                                        //     <iframe 
-                                        //         className="bg-video" 
-                                        //         src={val.src} 
-                                        //         title="Video Player"
-                                        //     ></iframe>
-                                        // </div>
-                                        <div></div>
 
-                                        // <div style={{ position: 'relative', height: 0, paddingBottom: '56.25%' }}>
-                                        //     <iframe className='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&amp;showControls=false&amp;loop=true' style={{ position: 'absolute', width: '100%', height: '100%', left: 0, top: 0 }} frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'>
-                                        //     </iframe></div>
+                                        <div className="video-wrapper" key={j}>
+                                            <iframe
+                                                allowFullScreen
+                                                className="bg-video"
+                                                src={val.src}
+                                                title="Remonter OG"
+                                            ></iframe>
+                                        </div>
 
                                     ))}
                                 </div>
@@ -131,9 +135,9 @@ function Vision(props) {
                 </section>
             )}
 
-            {clipsPlay && videosDetails && (
+            {play && videosDetails && (
                 <div className='bg-pop'>
-                    <VideosDetails videosDetails={videosDetails} clipsPlay={clipsPlay} setClipsPlay={setClipsPlay} />
+                    <VideosDetails videosDetails={videosDetails} play={play} setPlay={setPlay} />
                 </div>
             )}
         </div>
