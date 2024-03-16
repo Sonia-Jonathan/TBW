@@ -34,6 +34,5 @@ section {
 }
 
 .video-details .video-wrapper{
-    border: 1px solid red;
-    pointer-events: auto;
+    pointer-events: auto ;
 }
