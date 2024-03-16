@@ -12,3 +12,23 @@
 .bg-sound> .bloc-text{
     margin-top: 250px;
 }
+
+.sound-container {
+    text-align: center;
+    width: 50%;
+    height: 80%;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease; /* Ajout de la transition pour une animation fluide */
+}
+
+.sound-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.sound-container:hover {
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.5); /* Appliquer l'ombre au survol */
+}

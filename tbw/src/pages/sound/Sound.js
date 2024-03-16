@@ -6,7 +6,6 @@ function Sound(props) {
     const blocTexTitle = [
         {
             title: "Music",
-            // subtitle: "Productions musicales.",
             subtitle: "For the soul.",
         }
     ];
@@ -26,14 +25,17 @@ function Sound(props) {
             )}
 
             <div className='d-flex justify-content-center align-items-center' style={{ height: '80vh' }}>
-                <div className='d-flex justify-content-center' style={{ width: '100%' }}>
-                    <iframe
-                        className='col-lg-9 playlist'
-                        scrolling="no"
-                        frameBorder="no"
-                        allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https://soundcloud.com/user-994437473/sets/miles-morales-playlist?si=1c21fb318c564be7a5aebd25ca49367e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-                    ></iframe>
+                <div className='sound-container'>
+                    <div className='sound-wrapper'>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            scrolling="no"
+                            frameBorder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1662498459&amp;color=%23050406&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                        ></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,17 +43,3 @@ function Sound(props) {
 }
 
 export default Sound;
-
-
- {/* {blocText && (
-                <div className='bloc-text d-flex  justify-content-around py-5'>
-                    {blocText.map((val, j) => (
-                        <div key={j} className="col-lg-3 pb-5">
-                            <div>
-                                <BlocText key={j} title={val.title} subtitle={val.subtitle} btn={val.btn}/>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
-             */}
