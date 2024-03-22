@@ -26,17 +26,17 @@ function Vision(props) {
             video: [
                 {
                     // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
+                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
                         }
                     ]
                 }
@@ -55,17 +55,17 @@ function Vision(props) {
             video: [
                 {
                     // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6?autoPlay=true&background=true&loop=true",
+                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/ea90d7b91b1debc363/bb4d263853600cb6 "
+                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
                         }
                     ]
                 }
