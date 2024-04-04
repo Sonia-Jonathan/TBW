@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import "./VideosDetails.css";
 
@@ -7,7 +7,8 @@ import { FaArrowLeft } from "react-icons/fa6";
 
 function VideosDetails(props) {
 
-    const videosDetails = props.videosDetails
+    // const videosDetails = props.videosDetails
+    const [videosDetails, setVideosDetails] = useState(props.videosDetails);
     const play = props.play
     const setPlay = props.setPlay
 
@@ -17,6 +18,22 @@ function VideosDetails(props) {
 
     // const SEL = "bloc-video";
     // const SECTION_SEL = `.${SEL}`;
+
+    useEffect(() => {
+
+        if (videosDetails.length > 0) {
+            setVideosDetails(videosDetails => {
+                const newVideosDetails = [...videosDetails];
+                const firstVideo = newVideosDetails[0];
+                if (firstVideo.src.includes('autoPlay=true&background=true&loop=true')) {
+                    firstVideo.src = firstVideo.src.replace('autoPlay=true&background=true&loop=true', 'showControls=true&bigPlayButton=true');
+                    return newVideosDetails;
+                }
+                return videosDetails;
+            });
+        }
+        
+    }, [videosDetails]);
 
 
 
@@ -30,8 +47,8 @@ function VideosDetails(props) {
             {videosDetails.map((value, i) => (
                 <div key={i}>
 
-                    <section className='bloc-video col-lg-12'>
-                        <div className="video-wrapper" key={i}>
+                     <section >{/*className='bloc-video col-lg-12' */}
+                         <div  key={i} className="video-details-wrapper">{/* */}
                             <iframe
                                 allowFullScreen
                                 className="bg-video"
