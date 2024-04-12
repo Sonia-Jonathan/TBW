@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "./Home.css";
 import BlocText from '../../components/blockText/BlocText';
-import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 import VideosDetails from '../../components/videosDetails/VideosDetails';
 
 
 function Home(props) {
     const [play, setPlay] = useState(false);
     const [videosDetails, setVideosDetails] = useState("");
+
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/getClipsVideo')
+        .then(response => {
+          console.log("data",response.data);
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération des données de la vidéo:', error);
+        });
+    }, []);
 
     const clipsFunction = () => {
         setPlay(true);

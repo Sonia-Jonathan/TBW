@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('nom')->nullable(false);
             $table->string('prenom')->nullable(false);
             $table->text('description')->nullable(false);
-            $table->integer('img_id')->unsigned()->nullable(false);
-            $table->foreign('img_id')->references('id')->on('images');
+            $table->foreignId('img_id')->nullable(false)->constrained('images');
             $table->timestamps();
         });
     }

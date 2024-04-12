@@ -11,4 +11,5 @@ class Video extends Model
 
     protected $fillable = ['src', 'video_linked'];
 
+
 }
