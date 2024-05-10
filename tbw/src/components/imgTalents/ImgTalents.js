@@ -11,9 +11,9 @@ function ImgTalents(props) {
             {dataSrc && (
                 <div className='text-center d-flex justify-content-around row-img col-lg-9'>
                     {dataSrc.map((value, i) => (
-                        <div key={i} className=" mt-5 col-lg-12 flip-container">
+                        <div key={i} className=" m-auto col-lg-12 flip-container">
                             <div className="flipper">
-                                <div className="front">
+                                <div className="front col-lg-12">
                                     {/* Contenu avant (image) */}
                                     <img className='frontRadius'  src={value.src} alt="" />
                                 </div>

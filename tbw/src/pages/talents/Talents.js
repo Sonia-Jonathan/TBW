@@ -31,7 +31,7 @@ function Talents(props) {
             </div>
         )}
     
-        <div className="d-flex justify-content-center align-items-center" style={{ height: '725px'}}>
+        <div className=" d-flex justify-content-center align-items-center" style={{height: '550px'}}>
             <ImgTalents dataSrc={dataSrc}/>
         </div>
     </div>

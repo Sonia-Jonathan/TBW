@@ -1,0 +1,7 @@
+.bg-article{
+    padding-top: 50px;
+    background: rgb(13, 13, 13);
+    min-height: 100vh;
+    color: white;
+    scroll-snap-align: start; 
+}

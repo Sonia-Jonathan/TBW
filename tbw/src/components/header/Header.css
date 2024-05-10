@@ -4,7 +4,7 @@
     margin: auto;
     width: 100%;
     z-index: 1;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 .header-bg{
