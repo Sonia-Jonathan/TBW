@@ -7,13 +7,29 @@ import VideosDetails from '../../components/videosDetails/VideosDetails';
 
 function Home(props) {
     const [play, setPlay] = useState(false);
+    const [clips, setClips] = useState([]);
+    const [series, setSeries] = useState([]);
     const [videosDetails, setVideosDetails] = useState("");
 
 
     useEffect(() => {
-        axios.get('http://localhost:8000/getClipsVideo')
+        axios.get('http://localhost:8000/api/clipsVideo')
         .then(response => {
-          console.log("data",response.data);
+            
+            setClips(response.data[0]);
+
+              console.log("clips",clips)
+         })
+        .catch(error => {
+          console.error('Erreur lors de la récupération des données de la vidéo:', error);
+        });
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/seriesVideo')
+        .then(response => {
+            setSeries(response.data[0]);
+            console.log("data", response.data);
         })
         .catch(error => {
           console.error('Erreur lors de la récupération des données de la vidéo:', error);
@@ -26,63 +42,67 @@ function Home(props) {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
 
-    const clips = [
-        {
-            title: "Clips",
-            subtitle: "A travers le son.",
-            btn: {
-                title: "Regarder",
-                function: clipsFunction
-            },
-            video: [
-                {
-                    // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
-                    videosLinked: [
-                        {
-                            title: "",
-                            subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
-                        },
-                        {
-                            title: "",
-                            subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
-                        }
-                    ]
-                }
-            ]
-        }
-    ];
+    // const functionsMap = {
+    //     clipsFunction
+    // };
 
-    const series = [
-        {
-            title: "Series",
-            subtitle: "Du jamais vu.",
-            btn: {
-                title: "Regarder",
-                function: clipsFunction
-            },
-            video: [
-                {
-                    // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
-                    videosLinked: [
-                        {
-                            title: "",
-                            subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
-                        },
-                        {
-                            title: "",
-                            subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
-                        }
-                    ]
-                }
-            ]
-        }
-    ];
+    // const clips = [
+    //     {
+    //         title: "Clips",
+    //         subtitle: "A travers le son.",
+    //         btn: {
+    //             title: "Regarder",
+    //             function: clipsFunction
+    //         },
+    //         video: [
+    //             {
+    //                 // ?autoPlay=true&background=true&loop=true
+    //                 src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
+    //                 videosLinked: [
+    //                     {
+    //                         title: "",
+    //                         subtitle: "",
+    //                         src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+    //                     },
+    //                     {
+    //                         title: "",
+    //                         subtitle: "",
+    //                         src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     }
+    // ];
+
+    // const series = [
+    //     {
+    //         title: "Series",
+    //         subtitle: "Du jamais vu.",
+    //         btn: {
+    //             title: "Regarder",
+    //             function: clipsFunction
+    //         },
+    //         video: [
+    //             {
+    //                 // ?autoPlay=true&background=true&loop=true
+    //                 src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
+    //                 videosLinked: [
+    //                     {
+    //                         title: "",
+    //                         subtitle: "",
+    //                         src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+    //                     },
+    //                     {
+    //                         title: "",
+    //                         subtitle: "",
+    //                         src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     }
+    // ];
 
 
 
@@ -111,7 +131,7 @@ function Home(props) {
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={clipsFunction}/>
                             </div>
                         </div>
                     ))}
@@ -139,7 +159,7 @@ function Home(props) {
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btn={value.btn} />
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={value.btnFunction} />
                             </div>
                         </div>
                     ))}

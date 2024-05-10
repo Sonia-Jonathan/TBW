@@ -10,6 +10,7 @@ class VideoController extends Controller
 
     public function getClipsVideo()
     {
+        
         // Récupérer la vidéo 1 depuis la base de données
         $video1 = Video::find(1);
 
@@ -17,15 +18,12 @@ class VideoController extends Controller
         if (!$video1) {
             return response()->json(['error' => 'La vidéo 1 n\'existe pas.'], 404);
         }
-
         // Formatter les données de la vidéo 1 selon le format requis
-        $formattedVideo = [
-            'title' => '',
-            'subtitle' => '.',
-            'btn' => [
-                'title' => '',
-                'function' => '', // Vous pouvez affecter la fonction de votre front ici
-            ],
+        $formattedVideo[] = [
+            'title' => 'Clips',
+            'subtitle' => 'A travers le son.',
+            'btnTitle' => 'Regarder',
+            'btnFunction' => null,
             'video' => [
                 [
                     'src' => $video1->src,
@@ -34,8 +32,38 @@ class VideoController extends Controller
             ]
         ];
 
-        // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
-        return response()->json($formattedVideo);
+        // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
+        return response()->json([$formattedVideo]);
+        //response()->json($formattedVideo);
+    }
+
+    public function getSeriesVideo()
+    {
+        
+        // Récupérer la vidéo 1 depuis la base de données
+        $video1 = Video::find(1);
+
+        // Vérifier si la vidéo 1 existe
+        if (!$video1) {
+            return response()->json(['error' => 'La vidéo 1 n\'existe pas.'], 404);
+        }
+        // Formatter les données de la vidéo 1 selon le format requis
+        $formattedVideo[] = [
+            'title' => 'Series',
+            'subtitle' => 'Du jamais vu.',
+            'btnTitle' => 'Regarder',
+            'btnFunction' => null,
+            'video' => [
+                [
+                    'src' => $video1->src,
+                    'videosLinked' => $this->getLinkedVideos($video1->video_linked)
+                ]
+            ]
+        ];
+
+        // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
+        return response()->json([$formattedVideo]);
+        //response()->json($formattedVideo);
     }
 
     private function getLinkedVideos($videoLinkedIds)

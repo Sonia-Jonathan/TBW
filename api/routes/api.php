@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::get('/getClipsVideo', [VideoController::class, 'getClipsVideo']);
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/clipsVideo', [VideoController::class, 'getClipsVideo']);
+Route::get('/seriesVideo', [VideoController::class, 'getSeriesVideo']);
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
