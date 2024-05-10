@@ -13,6 +13,9 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import UniqueTitles from "./pages/sound/UniqueTitles/UniqueTitles";
 import Store from "./pages/store/Store";
+import Articles1 from "./pages/articles/Articles1";
+import Articles2 from "./pages/articles/Articles2";
+import Articles3 from "./pages/articles/Articles3";
 
 
 function App() {
@@ -21,6 +24,11 @@ function App() {
       {window.location.pathname === '/vision/clips' ? null : <Header />}      
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/article1" element={<Articles1 />} />
+        <Route path="/article2" element={<Articles2 />} />
+        <Route path="/article3" element={<Articles3 />} />
+
         <Route path="store" element={<Store />} />
         <Route path="vision" element={<Vision />} />
         <Route path="vision/clips" element={<Clips />} />
