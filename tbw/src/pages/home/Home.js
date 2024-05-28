@@ -159,7 +159,7 @@ function Home(props) {
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={value.btnFunction} />
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={clipsFunction} />
                             </div>
                         </div>
                     ))}

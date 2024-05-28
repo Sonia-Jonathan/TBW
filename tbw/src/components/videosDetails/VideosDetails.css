@@ -1,6 +1,6 @@
-.arrow-back{
+.arrow-back {
     background-color: transparent;
-    position:fixed;
+    position: fixed;
     margin: auto;
     z-index: 1;
     color: white;
@@ -12,12 +12,12 @@
 
 }
 
-.arrow-back:hover{
+.arrow-back:hover {
     opacity: 1;
 }
 
 
-html{
+html {
     scroll-snap-type: y mandatory;
 }
 
@@ -33,6 +33,20 @@ section {
     object-fit: cover;
 }
 
-.video-details .video-details-wrapper{
-    pointer-events: auto ;
+.video-details .video-details-wrapper {
+    pointer-events: auto;
+    position: relative;
+    padding-bottom: 56.25%; 
+    max-height: 100vh;
+
+
+}
+
+.video-details .video-details-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Vision.css";
 import BlocText from '../../components/blockText/BlocText';
-import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
+// import CarouselFullscreen from '../../components/carousel/CarouselFullscreen';
 import VideosDetails from '../../components/videosDetails/VideosDetails';
 
 
@@ -26,17 +26,17 @@ function Vision(props) {
             video: [
                 {
                     // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
+                    src: "https://videos.sproutvideo.com/embed/7990dabc1d12eac4f0/e7be646ddc319ddd?autoPlay=true&amp;background=true&amp;loop=true",
                     videosLinked: [
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+                            src: "https://videos.sproutvideo.com/embed/7990dabc1d12eac4f0/e7be646ddc319ddd?showControls=true "
                         },
                         {
                             title: "",
                             subtitle: "",
-                            src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705 "
+                            src: "https://videos.sproutvideo.com/embed/7990dabc1d12eac4f0/e7be646ddc319ddd "
                         }
                     ]
                 }
@@ -55,7 +55,7 @@ function Vision(props) {
             video: [
                 {
                     // ?autoPlay=true&background=true&loop=true
-                    src: "https://videos.sproutvideo.com/embed/4490d4b11a1be1cbcd/0b4273a5c3f5f705?autoPlay=true&background=true&loop=true",
+                    src: "https://videos.sproutvideo.com/embed/7990dabc1d12eac4f0/e7be646ddc319ddd?autoPlay=true&amp;background=true&amp;loop=true",
                     videosLinked: [
                         {
                             title: "",

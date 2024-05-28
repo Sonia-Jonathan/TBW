@@ -32,13 +32,14 @@ function VideosDetails(props) {
                 return videosDetails;
             });
         }
-        
+
     }, [videosDetails]);
 
 
 
     return (
         <div className='video-details'>
+
             <button onClick={goBack} className='arrow-back' >
                 <FaArrowLeft size="30px" />
 
@@ -47,8 +48,8 @@ function VideosDetails(props) {
             {videosDetails.map((value, i) => (
                 <div key={i}>
 
-                     <section >{/*className='bloc-video col-lg-12' */}
-                         <div  key={i} className="video-details-wrapper">{/* */}
+             <section >{/*className='bloc-video col-lg-12' */}
+            <div  key={i} className="video-details-wrapper">
                             <iframe
                                 allowFullScreen
                                 className="bg-video"
@@ -61,9 +62,10 @@ function VideosDetails(props) {
                     {value.videosLinked.map((val, j) => (
                         <div key={j}>
                             <section className='bloc-video col-lg-12'>
-                                <div className="video-wrapper" key={j}>
+                                <div className="video-details-wrapper" key={j}>
                                     <iframe
                                         allowFullScreen
+                                        frameBorder={0}
                                         className="bg-video"
                                         src={val.src}
                                         title="Remonter OG"
