@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/clipsVideo', [VideoController::class, 'getClipsVideo']);
 Route::get('/seriesVideo', [VideoController::class, 'getSeriesVideo']);
+Route::get('/article1', [VideoController::class, 'getArticle1']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();

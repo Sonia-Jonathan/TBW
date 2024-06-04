@@ -7,40 +7,40 @@ import VideosDetails from '../../components/videosDetails/VideosDetails';
 
 function Home(props) {
     const [play, setPlay] = useState(false);
-    const [clips, setClips] = useState([]);
+    const [article1, setArticle1] = useState([]);
     const [series, setSeries] = useState([]);
     const [videosDetails, setVideosDetails] = useState("");
 
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/clipsVideo')
-        .then(response => {
-            
-            setClips(response.data[0]);
+        axios.get('http://localhost:8000/api/article1')
+            .then(response => {
 
-              console.log("clips",clips)
-         })
-        .catch(error => {
-          console.error('Erreur lors de la récupération des données de la vidéo:', error);
-        });
+                setArticle1(response.data[0]);
+
+                console.log("article1", article1)
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données de la vidéo:', error);
+            });
     }, []);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/seriesVideo')
-        .then(response => {
-            setSeries(response.data[0]);
-            console.log("data", response.data);
-        })
-        .catch(error => {
-          console.error('Erreur lors de la récupération des données de la vidéo:', error);
-        });
+            .then(response => {
+                setSeries(response.data[0]);
+                console.log("data", response.data);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données de la vidéo:', error);
+            });
     }, []);
 
-    const clipsFunction = () => {
-        setPlay(true);
-        setVideosDetails(clips[0].video);
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
+    // const clipsFunction = () => {
+    //     setPlay(true);
+    //     setVideosDetails(clips[0].video);
+    //     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // }
 
     // const functionsMap = {
     //     clipsFunction
@@ -108,9 +108,9 @@ function Home(props) {
 
     return (
         <div className='bg-vision'>
-            {clips && !play && (
+            {article1 && !play && (
                 <section className='bg-vision-section'>
-                    {clips.map((value, i) => (
+                    {article1.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
                                 <div className=' bloc-video col-lg-12 '>
@@ -131,14 +131,74 @@ function Home(props) {
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={clipsFunction}/>
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} link={value.link} />
                             </div>
                         </div>
                     ))}
                 </section>
             )}
 
-            {series && !play && (
+            {article1 && !play && (
+                <section className='bg-vision-section'>
+                    {article1.map((value, i) => (
+                        <div key={i} className="d-flex align-items-end">
+                            {value.video && (
+                                <div className=' bloc-video col-lg-12 '>
+                                    {value.video.map((val, j) => (
+
+                                        <div className="video-wrapper" key={j}>
+                                            <iframe
+                                                allowFullScreen
+                                                className="bg-video"
+                                                src={val.src}
+                                                title="Remonter OG"
+                                            ></iframe>
+                                        </div>
+
+
+
+                                    ))}
+                                </div>
+                            )}
+                            <div className='block-text col-lg-12 my-5'>
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} link={value.link} />
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            )}
+
+            {article1 && !play && (
+                <section className='bg-vision-section'>
+                    {article1.map((value, i) => (
+                        <div key={i} className="d-flex align-items-end">
+                            {value.video && (
+                                <div className=' bloc-video col-lg-12 '>
+                                    {value.video.map((val, j) => (
+
+                                        <div className="video-wrapper" key={j}>
+                                            <iframe
+                                                allowFullScreen
+                                                className="bg-video"
+                                                src={val.src}
+                                                title="Remonter OG"
+                                            ></iframe>
+                                        </div>
+
+
+
+                                    ))}
+                                </div>
+                            )}
+                            <div className='block-text col-lg-12 my-5'>
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} link={value.link} />
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            )}
+
+            {/* {series && !play && (
                 <section className='bg-vision-section'>
                     {series.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
@@ -164,13 +224,13 @@ function Home(props) {
                         </div>
                     ))}
                 </section>
-            )}
+            )} */}
 
-            {play && videosDetails && (
+            {/* {play && videosDetails && (
                 <div className='bg-pop'>
                     <VideosDetails videosDetails={videosDetails} play={play} setPlay={setPlay} />
                 </div>
-            )}
+            )} */}
         </div>
     );
 }
