@@ -1,14 +1,15 @@
-.row-img {
-
-    flex-wrap: wrap;
+.front .img-card {
+    width: 80%;
+    border-radius: 50px;
+    height: 100%;
+    object-fit: cover;
 }
+
 
 .flip-container {
     perspective: 1000px;
-    width: 300px;
-    /* Ajustez la largeur selon vos besoins */
+    width: 30%;
     height: 450px;
-    /* Ajustez la hauteur selon vos besoins */
     position: relative;
 }
 
@@ -22,25 +23,26 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    
 
 }
 
 
-.frontRadius{
+.frontRadius {
     border-radius: 50px;
 }
 
-.front, .back {
+.front,
+.back {
     width: 100%;
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    
+
 
 }
 
@@ -54,9 +56,18 @@
 .back {
     transform: rotateY(180deg);
     background-color: #ffffff;
-    /* Couleur de fond arrière */
     color: #000000;
-    /* Couleur du texte arrière */
     box-shadow: 1px 1px 2px white, 0 0 1em white;
-    border-radius: 50px ;
+    border-radius: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.back p {
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
 }

@@ -16,26 +16,45 @@ function Talents(props) {
     ]
 
     const dataSrc = talentDetails;
-    
+
     return (
         <div className='bg-talents'>
-        {blocTexTitle && (
-            <div>
-                {blocTexTitle.map((value, i) => (
-                    <div key={i} className="col-lg-12 d-flex justify-content-center">
-                        <div>
-                            <BlocText key={i} title={value.title} subtitle={value.subtitle} />
+            {blocTexTitle && (
+                <div>
+                    {blocTexTitle.map((value, i) => (
+                        <div key={i} className="col-lg-12 d-flex justify-content-center">
+                            <div>
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} />
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+            )}
+
+            <div className='mt-5 '>
+                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
+                <div className='col-lg-10 pb-5 m-auto'>
+                    <ImgTalents dataSrc={dataSrc} />
+
+                </div>
             </div>
-        )}
-    
-        <div className=" d-flex justify-content-center align-items-center" style={{height: '550px'}}>
-            <ImgTalents dataSrc={dataSrc}/>
+            <div className='mt-5 '>
+                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
+                <div className='col-lg-10 pb-5 m-auto'>
+                    <ImgTalents dataSrc={dataSrc} />
+
+                </div>
+            </div>
+            <div className='mt-5 '>
+                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
+                <div className='col-lg-10 pb-5 m-auto'>
+                    <ImgTalents dataSrc={dataSrc} />
+
+                </div>
+            </div>
+
         </div>
-    </div>
-    
+
     );
 }
 
