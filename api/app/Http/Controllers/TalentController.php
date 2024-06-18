@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Talent;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,25 @@ class TalentController extends Controller
      */
     public function index()
     {
-        //
+        $allTalents = Talent::findAll();
+        $allTalentsFormatted = [];
+        foreach ($allTalents as $key => $talent) {
+            $imgTalent = Image::find($talent->img_id);
+            $formattedTalent[] = [
+                'nom' => $talent->nom,
+                'prenom' => $talent->prenom,
+                'description' => $talent->description,
+                'img' => [
+                    [
+                        'src' => $imgTalent->src,
+                        'alt' => $imgTalent->alt
+                    ]
+                ]
+            ];
+
+            array_push($allTalentsFormatted, $formattedTalent);
+        }
+        return response()->json([$allTalents]);
     }
 
     /**

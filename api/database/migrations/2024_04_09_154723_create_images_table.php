@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id'); // Utilise increments
             $table->string('src')->nullable(false);
+            $table->string('alt')->nullable(false);
             $table->timestamps();
         });
     }
@@ -26,3 +27,4 @@ return new class extends Migration
         Schema::dropIfExists('images');
     }
 };
+

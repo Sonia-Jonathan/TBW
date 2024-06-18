@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('talent', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('talents', function (Blueprint $table) {
+            $table->increments('id'); // Utilise increments pour correspondre
+            $table->unsignedInteger('img_id'); // Utilise unsignedInteger pour correspondre
+            $table->foreign('img_id')->references('id')->on('images')->onDelete('cascade');
             $table->string('nom')->nullable(false);
             $table->string('prenom')->nullable(false);
             $table->text('description')->nullable(false);
-            $table->foreignId('img_id')->nullable(false)->constrained('images');
             $table->timestamps();
         });
     }
@@ -26,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('talent');
+        Schema::dropIfExists('talents');
     }
 };
+
