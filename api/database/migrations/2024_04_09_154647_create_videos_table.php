@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
+            $table->json('page')->nullable(false);
             $table->string('src')->nullable(false);
             $table->json('video_linked')->nullable();
             $table->timestamps();

@@ -15,10 +15,13 @@ function Home(props) {
     useEffect(() => {
         axios.get('http://localhost:8000/api/article1')
             .then(response => {
+                console.log("res", response.data[0][0].btnTitle);
+
+                console.log("data", response.data[0].btnTitle);
 
                 setArticle1(response.data[0]);
 
-                console.log("article1", article1)
+
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des données de la vidéo:', error);
@@ -29,7 +32,7 @@ function Home(props) {
         axios.get('http://localhost:8000/api/seriesVideo')
             .then(response => {
                 setSeries(response.data[0]);
-                console.log("data", response.data);
+                // console.log("data", response.data[0]);
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des données de la vidéo:', error);
