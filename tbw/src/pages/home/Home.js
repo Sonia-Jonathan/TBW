@@ -15,13 +15,8 @@ function Home(props) {
     useEffect(() => {
         axios.get('http://localhost:8000/api/article1')
             .then(response => {
-                console.log("res", response.data[0][0].btnTitle);
-
-                console.log("data", response.data[0].btnTitle);
-
-                setArticle1(response.data[0]);
-
-
+                let articleData = response.data;
+                setArticle1(articleData);
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des données de la vidéo:', error);
@@ -117,20 +112,16 @@ function Home(props) {
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
                                 <div className=' bloc-video col-lg-12 '>
-                                    {value.video.map((val, j) => (
+                                    
 
-                                        <div className="video-wrapper" key={j}>
+                                        <div className="video-wrapper">
                                             <iframe
                                                 allowFullScreen
                                                 className="bg-video"
-                                                src={val.src}
+                                                src={value.video.src}
                                                 title="Remonter OG"
                                             ></iframe>
                                         </div>
-
-
-
-                                    ))}
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
@@ -141,26 +132,22 @@ function Home(props) {
                 </section>
             )}
 
-            {article1 && !play && (
+{article1 && !play && (
                 <section className='bg-vision-section'>
                     {article1.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
                                 <div className=' bloc-video col-lg-12 '>
-                                    {value.video.map((val, j) => (
+                                    
 
-                                        <div className="video-wrapper" key={j}>
+                                        <div className="video-wrapper">
                                             <iframe
                                                 allowFullScreen
                                                 className="bg-video"
-                                                src={val.src}
+                                                src={value.video.src}
                                                 title="Remonter OG"
                                             ></iframe>
                                         </div>
-
-
-
-                                    ))}
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
@@ -171,26 +158,22 @@ function Home(props) {
                 </section>
             )}
 
-            {article1 && !play && (
+{article1 && !play && (
                 <section className='bg-vision-section'>
                     {article1.map((value, i) => (
                         <div key={i} className="d-flex align-items-end">
                             {value.video && (
                                 <div className=' bloc-video col-lg-12 '>
-                                    {value.video.map((val, j) => (
+                                    
 
-                                        <div className="video-wrapper" key={j}>
+                                        <div className="video-wrapper">
                                             <iframe
                                                 allowFullScreen
                                                 className="bg-video"
-                                                src={val.src}
+                                                src={value.video.src}
                                                 title="Remonter OG"
                                             ></iframe>
                                         </div>
-
-
-
-                                    ))}
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>

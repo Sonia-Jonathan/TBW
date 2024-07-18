@@ -12,7 +12,7 @@ class VideoController extends Controller
     {
         
         // Récupérer la vidéo 1 depuis la base de données
-        $video1 = Video::find(1);
+        $video1 = Video::find(2);
 
         // Vérifier si la vidéo 1 existe
         if (!$video1) {
@@ -41,7 +41,7 @@ class VideoController extends Controller
     {
         
         // Récupérer la vidéo 1 depuis la base de données
-        $video1 = Video::find(1);
+        $video1 = Video::find(3);
 
         // Vérifier si la vidéo 1 existe
         if (!$video1) {
@@ -107,17 +107,21 @@ class VideoController extends Controller
             'subtitle' => 'Sous-titre article1.',
             'btnTitle' => 'Regarder',
             'link' => 'article1',
-            'video' => [
+            'page'=> json_decode($video1->page, true),
+            'video' => 
                 [
+                    'id'=> $video1->id,
                     'src' => $video1->src,
                 ]
-            ]
+            
         ];
 
         // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
-        return response()->json([$formattedVideo]);
+        return response()->json($formattedVideo);
         //response()->json($formattedVideo);
     }
+
+    
     /**
      * Display a listing of the resource.
      */
