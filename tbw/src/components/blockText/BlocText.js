@@ -30,14 +30,9 @@ function BlocText(props) {
                 <a href={link}><Button variant="outline-light" className='btn px-4'>{btnTitle}</Button></a>
                 // <a href={link.href} className='text-decoration-none blue'>{link.title}</a>
             )}
-            {btnFunction && (
+            {btnFunction || btn && (
                 <div className='mt-2'>
-                    <a><Button onClick={handleClick}variant="outline-light" className='btn px-4'>{btnTitle}</Button></a>
-                </div>
-            )}
-            {btn && (
-                <div className='mt-2'>
-                    <Button onClick={handleClick} variant="outline-light" className='btn px-4'>{btn.title}</Button>
+                    <Button onClick={handleClick}variant="outline-light" className='btn px-4'>{btnTitle}</Button>
                 </div>
             )}
             

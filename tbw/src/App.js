@@ -16,6 +16,7 @@ import Store from "./pages/store/Store";
 import Articles1 from "./pages/articles/Articles1";
 import Articles2 from "./pages/articles/Articles2";
 import Articles3 from "./pages/articles/Articles3";
+import VideosDetails from "./pages/vision/videosDetails/VideosDetails";
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
         <Route path="store" element={<Store />} />
         <Route path="vision" element={<Vision />} />
-        <Route path="vision/clips" element={<Clips />} />
+        <Route path="vision/{:page}/details" element={<VideosDetails />} />
         <Route path="music" element={<Sound />} />
         <Route path="talents" element={<Talents />} />
         <Route path="sound/UniqueTitles" element={<UniqueTitles />} />

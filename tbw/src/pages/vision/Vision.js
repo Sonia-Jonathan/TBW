@@ -15,10 +15,9 @@ function Vision(props) {
     useEffect(() => {
         axios.get('http://localhost:8000/api/clipsVideo')
         .then(response => {
-            
+            console.log("clips",response.data[0])
             setClips(response.data[0]);
-
-              console.log("clips",clips)
+            console.log("clips",response.data[0])
          })
         .catch(error => {
           console.error('Erreur lors de la récupération des données de la vidéo:', error);

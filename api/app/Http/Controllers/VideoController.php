@@ -24,6 +24,7 @@ class VideoController extends Controller
             'subtitle' => 'A travers le son.',
             'btnTitle' => 'Regarder',
             'btnFunction' => null,
+            'page' => 'clips',
             'video' => [
                 [
                     'src' => $video1->src,
@@ -53,6 +54,7 @@ class VideoController extends Controller
             'subtitle' => 'Du jamais vu.',
             'btnTitle' => 'Regarder',
             'btnFunction' => null,
+            'page' => 'series',
             'video' => [
                 [
                     'src' => $video1->src,
