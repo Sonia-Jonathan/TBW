@@ -26,7 +26,7 @@ function Header(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="col-lg-6 justify-content-center m-auto">
           <Navbar.Brand href="/" className="neon-text-navbar text-white">TBW</Navbar.Brand>
-            <Nav.Link className="neon-text-navbar text-white" href="/store" >Store</Nav.Link>
+            {/* <Nav.Link className="neon-text-navbar text-white" href="/store" >Store</Nav.Link> */}
             <Nav.Link className="neon-text-navbar text-white" href="/vision" >Vision</Nav.Link>
             <Nav.Link className="neon-text-navbar text-white" href="/music">Music</Nav.Link>
             <Nav.Link className="neon-text-navbar text-white" href="/talents">Talents</Nav.Link>

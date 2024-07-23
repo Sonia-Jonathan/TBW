@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./Vision.css";
 import BlocText from '../../components/blockText/BlocText';
@@ -9,15 +10,15 @@ function Vision(props) {
     const [play, setPlay] = useState(false);
     const [clips, setClips] = useState([]);
     const [series, setSeries] = useState([]);
+    const [page, setPage] = useState("");
     const [videosDetails, setVideosDetails] = useState("");
-
-
+    const navigate = useNavigate();
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     useEffect(() => {
         axios.get('http://localhost:8000/api/clipsVideo')
         .then(response => {
             console.log("clips",response.data[0])
             setClips(response.data[0]);
-            console.log("clips",response.data[0])
          })
         .catch(error => {
           console.error('Erreur lors de la récupération des données de la vidéo:', error);
@@ -38,7 +39,15 @@ function Vision(props) {
     const clipsFunction = () => {
         setPlay(true);
         setVideosDetails(clips[0].video);
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        setPage(clips[0].page);
+        navigate(`/vision/${clips[0].page}/details`);
+    }
+
+    const seriesFunction = () => {
+        setPlay(true);
+        setVideosDetails(clips[0].video);
+        setPage(series[0].page);
+        navigate(`/vision/${series[0].page}/details`);
     }
 
     // const functionsMap = {
@@ -158,7 +167,7 @@ function Vision(props) {
                                 </div>
                             )}
                             <div className='block-text col-lg-12 my-5'>
-                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={clipsFunction} />
+                                <BlocText key={i} title={value.title} subtitle={value.subtitle} btnTitle={value.btnTitle} btnFunction={seriesFunction} />
                             </div>
                         </div>
                     ))}
