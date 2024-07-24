@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./Home.css";
 import BlocText from '../../components/blockText/BlocText';
-import VideosDetails from '../../components/videosDetails/VideosDetails';
+import VideosDetails from '../../components/videoSection/VideoSection';
 
 
 function Home(props) {
