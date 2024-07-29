@@ -2,7 +2,6 @@ html {
     scroll-snap-type: y mandatory;
 }
 
-
 section {
     height: 100vh;
     scroll-snap-align: start;
@@ -13,84 +12,3 @@ section {
     min-height: 100vh;
     background-color: black;
 }
-
-
-/* 
-
-.bloc-video {
-    height: 100vh;
-    overflow: hidden;
-
-    
-}
-
-.bg-video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    /* pointer-events: none; 
-}
-
-
-
-
-.bg-img {
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slide-img {
-    height: 100vh;
-    width: 100%;
-}
-
-.bg-vision .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; 
-    max-height: 100vh;
-    pointer-events: none;
-
-}
-
-.bg-vision .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border: none;
-} */
-
-
-
-/********************* Vision.css *********************/
-/* .video-section {
-    position: relative;
-    width: 100%;
-    height: 100vh; 
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  } */
-  
-  /* .video-section .black-screen {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-  }
-  
-  
-  .block-text {
-    position: absolute;
-    bottom: 20px;
-
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-  } */
-
-
-  
