@@ -139,7 +139,7 @@ function VideosDetails(props) {
                 <div key={i}>
 
                     <section >
-                        <div key={i} className="">
+                        <div key={i} className="bg-video">
                             <iframe
                                 allowFullScreen
                                 className="bg-video"

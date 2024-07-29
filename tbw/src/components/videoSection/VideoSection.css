@@ -1,19 +1,37 @@
-/* VideosDetails.css */
-/* .video-section {
+.video-section {
     position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .video-section .black-screen {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-  }
-  
-  .bg-video {
-    width: 100%;
-    height: 100%;
-  }
-   */
+    padding-bottom: 56.25%; 
+    max-height: 100vh;
+}
+
+.video-section .black-screen {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+
+
+.video-section iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border: none;
+
+
+}
+
+.video-details .video-section iframe {
+  pointer-events:initial;
+}
+
+.block-text {
+  position: absolute;
+  bottom: 150px;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+}

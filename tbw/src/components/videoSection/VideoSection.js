@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import BlocText from '../blockText/BlocText';
+import "./VideoSection.css";
 
-const VideoSection = ({ videoSrc, title, subtitle, btnTitle, btnFunction }) => {
+const VideoSection = ({ videoSrc, title, subtitle, btnTitle, btnFunction, link }) => {
   const videoRef = useRef(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
@@ -33,18 +34,25 @@ const VideoSection = ({ videoSrc, title, subtitle, btnTitle, btnFunction }) => {
   return (
     <div ref={videoRef} className='video-section'>
       {isVideoVisible ? (
-        <iframe
-          allowFullScreen
-          className="bg-video"
-          src={videoSrc}
-          title={title}
-        ></iframe>
+        <div className="video-wrapper" >
+           <iframe
+            allowFullScreen
+            className="bg-video"
+            src={videoSrc}
+            title={title}
+          ></iframe>
+        </div>
+         
+
       ) : (
         <div className="black-screen"></div>
       )}
-      <div className='block-text col-lg-12 my-5'>
-        <BlocText title={title} subtitle={subtitle} btnTitle={btnTitle} btnFunction={btnFunction} />
+      {(title || subtitle)  && (
+        <div className='block-text col-lg-12 my-5'>
+        <BlocText title={title} subtitle={subtitle} btnTitle={btnTitle} btnFunction={btnFunction} link={link}/>
       </div>
+      )}
+      
     </div>
   );
 };

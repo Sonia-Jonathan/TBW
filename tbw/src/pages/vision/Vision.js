@@ -55,7 +55,7 @@ function Vision(props) {
   return (
     <div className='bg-vision'>
       {clips && !play && (
-        <section className='bg-vision-section'>
+        <section>
           {clips.map((value, i) => (
             <VideoSection
               key={i}
@@ -70,7 +70,7 @@ function Vision(props) {
       )}
 
       {series && !play && (
-        <section className='bg-vision-section'>
+        <section >
           {series.map((value, i) => (
             <VideoSection
               key={i}
@@ -84,11 +84,11 @@ function Vision(props) {
         </section>
       )}
 
-      {play && videosDetails && (
+      {/* {play && videosDetails && (
         <div className='bg-pop'>
           <VideosDetails videosDetails={videosDetails} play={play} setPlay={setPlay} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
