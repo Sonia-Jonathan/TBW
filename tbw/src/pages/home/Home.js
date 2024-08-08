@@ -36,6 +36,21 @@ function Home(props) {
                     ))}
                 </section>
             )}
+            
+            {article1 && !play && (
+                <section >
+                    {article1.map((value, i) => (
+                        <VideoSection
+                            key={i}
+                            videoSrc={value.video?.src}
+                            title={value.title}
+                            subtitle={value.subtitle}
+                            btnTitle={value.btnTitle}
+                            link={value.link}
+                        />
+                    ))}
+                </section>
+            )}
 
             {article1 && !play && (
                 <section >
