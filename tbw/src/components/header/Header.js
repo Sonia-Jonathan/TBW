@@ -1,33 +1,25 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import './Header.css';
 
-import "./Header.css";
-
-function Header(props) {
-
-  const [color, setColor] = useState(false);
-  const changeColor = () => {
-    if (window.scrollY >= 30) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  }
-
-  window.addEventListener('scroll', changeColor);
-
+function Header({ color }) {
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <Navbar expand="lg" className={`header ${color ? 'header-bg' : ''}`}>
+    <Navbar expanded={expanded} expand="lg" className={`header ${color ? 'header-bg' : ''}`}>
       <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="col-lg-6 justify-content-center m-auto">
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav" 
+          className="custom-toggler" 
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        />
+        <Navbar.Collapse 
+          id="basic-navbar-nav" 
+          className={`custom-collapse ${expanded ? 'show' : ''}`} 
+        >
+          <Nav className="navbar col-lg-6 justify-content-lg-center m-lg-auto">
             <Navbar.Brand href="/" className="neon-text-navbar text-white">TBW</Navbar.Brand>
-            {/* <Nav.Link className="neon-text-navbar text-white" href="/store" >Store</Nav.Link> */}
-            <Nav.Link className="neon-text-navbar text-white" href="/vision" >Vision</Nav.Link>
+            <Nav.Link className="neon-text-navbar text-white" href="/vision">Vision</Nav.Link>
             <Nav.Link className="neon-text-navbar text-white" href="/music">Music</Nav.Link>
             <Nav.Link className="neon-text-navbar text-white" href="/talents">Talents</Nav.Link>
           </Nav>
