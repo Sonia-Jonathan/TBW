@@ -43,6 +43,7 @@
         align-items: flex-start; 
         padding-left: 15px; 
         padding-top: 50px;
+         padding-bottom: 1500px;  /*évite de voir ce qu'il y a derriere le menu*/
     }
 
     .custom-collapse .nav-link, .custom-collapse .nav-brand {

@@ -15,7 +15,7 @@ function Header({ color }) {
         />
         <Navbar.Collapse 
           id="basic-navbar-nav" 
-          className={`custom-collapse ${expanded ? 'show' : ''}`} 
+          className="custom-collapse" 
         >
           <Nav className="navbar col-lg-6 justify-content-lg-center m-lg-auto">
             <Navbar.Brand href="/" className="neon-text-navbar text-white">TBW</Navbar.Brand>
