@@ -2,7 +2,9 @@
 
 .btn{
     border-radius: 20px;
-    cursor: pointer;
-    
+    cursor: pointer; 
+}
 
+@media (max-width: 767px) {
+    
 }

@@ -3,7 +3,7 @@ import BlocText from '../blockText/BlocText';
 
 import "./VideoSection.css";
 
-function VideoSection ({ videoSrc, title, subtitle, btnTitle, btnFunction, link }) {
+function VideoSection({ videoSrc, title, subtitle, btnTitle, btnFunction, link }) {
   const videoRef = useRef(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
@@ -42,13 +42,23 @@ function VideoSection ({ videoSrc, title, subtitle, btnTitle, btnFunction, link 
             src={videoSrc}
             title={title}
           ></iframe>
+
+          <div
+            className="image-wrapper"
+            style={{
+              backgroundImage: 'url(https://i.pinimg.com/564x/ba/33/62/ba33621d4c8c854facf27cd767de65ad.jpg)', 
+              height: '100vh',
+              width: '100%',
+            }}
+          // style={{ backgroundImage: `url(${imageSrc})` }}
+          ></div>
         </div>
       ) : (
         <div className="black-screen"></div>
       )}
 
       {(title || subtitle) && (
-        <div className='block-text col-lg-12 my-5'>
+        <div className='block-text col-lg-12 my-lg-5'>
           <BlocText title={title} subtitle={subtitle} btnTitle={btnTitle} btnFunction={btnFunction} link={link} />
         </div>
       )}

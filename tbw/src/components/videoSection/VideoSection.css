@@ -1,7 +1,7 @@
 .video-section {
-    position: relative;
-    padding-bottom: 56.25%; 
-    max-height: 100vh;
+  position: relative;
+  padding-bottom: 56.25%;
+  max-height: 100vh;
 }
 
 .video-section .black-screen {
@@ -25,7 +25,7 @@
 }
 
 .video-details .video-section iframe {
-  pointer-events:initial;
+  pointer-events: initial;
 }
 
 .block-text {
@@ -34,4 +34,37 @@
   z-index: 0;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .video-section {
+    border: 1px solid red;
+    height: 100vh;
+
+  }
+
+  .bg-video,
+  .black-screen {
+    display: none;
+  }
+
+  .image-wrapper {
+    display: block;
+  }
+
+  .video-section {
+    height: 100vh;
+  }
+
+  .block-text {
+    position: absolute;
+    bottom: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+  }
+
+
 }

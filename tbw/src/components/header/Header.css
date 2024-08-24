@@ -18,12 +18,13 @@
 }
 
 /* MOBILE */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    
     .custom-toggler {
         border-color: white;
         position: fixed;
         top: 10px;
-        left: 10px;
+        right: 10px;
         z-index: 1100;
     }
     .custom-toggler .navbar-toggler-icon {
@@ -42,8 +43,7 @@
         flex-direction: column;
         align-items: flex-start; 
         padding-left: 15px; 
-        padding-top: 50px;
-         padding-bottom: 1500px;  /*évite de voir ce qu'il y a derriere le menu*/
+        padding-top: 50px;padding-bottom: 1500px;  /*évite de voir ce qu'il y a derriere le menu*/
     }
 
     .custom-collapse .nav-link, .custom-collapse .nav-brand {
