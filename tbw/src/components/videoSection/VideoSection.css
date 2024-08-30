@@ -42,7 +42,6 @@
 
 @media (max-width: 767px) {
   .video-section {
-    border: 1px solid red;
     height: 100vh;
 
   }
