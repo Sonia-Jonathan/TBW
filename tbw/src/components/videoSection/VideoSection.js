@@ -47,6 +47,7 @@ function VideoSection({ videoSrc, title, subtitle, btnTitle, btnFunction, link }
             className="image-wrapper"
             style={{
               backgroundImage: 'url(https://i.pinimg.com/564x/ba/33/62/ba33621d4c8c854facf27cd767de65ad.jpg)', 
+              backgroundSize:'cover',
               height: '100vh',
               width: '100%',
             }}
