@@ -41,6 +41,10 @@ html {
 }
 
 @media (max-width: 767px) {
+    .video-details section {
+        outline: 3px solid rgb(16, 16, 16);
+    }
+
     .video-details .bg-video {
         min-height: 100vh;
         height: 100%; 
