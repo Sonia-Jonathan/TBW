@@ -50,6 +50,7 @@ function ImgTalents(props) {
                             {dataSrc.map((value, i) => (
                                 <div key={i} className='slider-image-container col-12'>
                                     <img className='col-12 slider-image' src={value.src} alt={value.nom} />
+                                    <button className='card-button'> En savoir plus ...</button>
                                 </div>
                             ))}
                         </Slider>
