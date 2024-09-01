@@ -51,7 +51,6 @@ function VideoSection({ videoSrc, title, subtitle, btnTitle, btnFunction, link }
               height: '100vh',
               width: '100%',
             }}
-          // style={{ backgroundImage: `url(${imageSrc})` }}
           ></div>
         </div>
       ) : (

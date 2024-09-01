@@ -20,6 +20,7 @@ function ImgTalents(props) {
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: '0',
+        arrows: false,
     };
 
     return (

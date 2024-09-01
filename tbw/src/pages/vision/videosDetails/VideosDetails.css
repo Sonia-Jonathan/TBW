@@ -42,7 +42,15 @@ html {
 
 @media (max-width: 767px) {
     .video-details .bg-video {
-        min-height: 100vh; /* Assurez-vous que la hauteur est au moins de 100% de la hauteur de la fenêtre */
-        height: 100%; /* Assurez-vous que l'iframe prend toute la hauteur */
+        min-height: 100vh;
+        height: 100%; 
     }
+
+    .video-details .bg-video {
+        transform-origin: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
