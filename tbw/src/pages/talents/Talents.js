@@ -23,7 +23,7 @@ function Talents(props) {
     useEffect(() => {
         axios.get('http://localhost:8000/api/talents')
           .then(response => {
-            setTalents(response.data[0]);
+            setTalents(response.data);
           })
           .catch(error => {
             console.error('Erreur lors de la récupération des talents:', error);

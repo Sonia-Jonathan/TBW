@@ -9,7 +9,7 @@ class Talent extends Model
 
     protected $table = 'talents';
 
-    protected $fillable = ['nom', 'prenom', 'description', 'img_id', 'categorie_id'];
+    protected $fillable = ['nom', 'prenom', 'description', 'img_id', 'category_id'];
 
     public function image()
     {
@@ -18,6 +18,6 @@ class Talent extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'categorie_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }

@@ -11,29 +11,49 @@ class TalentController extends Controller
      */
     public function index()
     {
-       
-            // Charger les talents avec les relations image et category
+        try {
+            // Charger tous les talents avec les relations image et category
             $allTalents = Talent::with(['image', 'category'])->get();
             
             // Formater les talents
-            $allTalentsFormatted[] = $allTalents->map(function ($talent) {
+            $allTalentsFormatted = $allTalents->map(function ($talent) {
                 return [
                     'nom' => $talent->nom,
                     'prenom' => $talent->prenom,
                     'description' => $talent->description,
-                    'image' => [
-                        'src' => $talent->image->src,
-                        'alt' => $talent->image->alt
-                    ],
-                    'category' => [
-                        'nom' => $talent->category->nom
+                    'img' => [
+                        'src' => $talent->image ? $talent->image->src : null,
+                        'alt' => $talent->image ? $talent->image->alt : null,
                     ]
                 ];
             });
 
-            return response()->json($allTalentsFormatted);
+            // Trier les talents par catégorie
+            $talentsGroupedByCategory = $allTalents->groupBy(function ($talent) {
+                return $talent->category->name;
+            });
 
-       
+            // Formater les talents triés par catégorie
+            $formattedResult = $talentsGroupedByCategory->map(function ($talents) {
+                return $talents->map(function ($talent) {
+                    return [
+                        'nom' => $talent->nom,
+                        'prenom' => $talent->prenom,
+                        'description' => $talent->description,
+                        'img' => [
+                            'src' => $talent->image ? $talent->image->src : null,
+                            'alt' => $talent->image ? $talent->image->alt : null,
+                        ]
+                    ];
+                });
+            });
+
+            return response()->json($formattedResult);
+
+        } catch (\Exception $e) {
+            // Retourner une réponse d'erreur en cas d'exception
+            return response()->json(['error' => 'Erreur interne du serveur'], 500);
+        }
     }
 
     // Méthodes restantes pour les opérations CRUD
