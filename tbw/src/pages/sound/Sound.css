@@ -33,3 +33,11 @@
 .sound-container:hover {
     box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.5); /* Appliquer l'ombre au survol */
 }
+
+@media (max-width: 767px) {
+
+    .sound-container {
+        width: 70%;
+
+    }
+}
