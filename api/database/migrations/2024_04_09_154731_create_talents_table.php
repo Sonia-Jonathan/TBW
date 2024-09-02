@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('talents', function (Blueprint $table) {
-            $table->increments('id'); // Utilise increments pour correspondre
-            $table->unsignedInteger('img_id'); // Utilise unsignedInteger pour correspondre
+            $table->increments('id'); 
+            $table->unsignedInteger('img_id'); 
             $table->foreign('img_id')->references('id')->on('images')->onDelete('cascade');
+            $table->unsignedInteger('category_id'); // Ajout du champ category_id
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('nom')->nullable(false);
             $table->string('prenom')->nullable(false);
             $table->text('description')->nullable(false);

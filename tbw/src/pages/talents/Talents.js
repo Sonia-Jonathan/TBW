@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import "./Talents.css";
 import BlocText from '../../components/blockText/BlocText';
 import ImgTalents from '../../components/imgTalents/ImgTalents';
 
 import talentDetails from '../../asset/json/talents/talentDetails.json'
+import axios from 'axios';
 
 
 function Talents(props) {
@@ -15,7 +16,20 @@ function Talents(props) {
         }
     ]
 
+    const [talents, setTalents] = useState("");
+
     const dataSrc = talentDetails;
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/talents')
+          .then(response => {
+            setTalents(response.data[0]);
+          })
+          .catch(error => {
+            console.error('Erreur lors de la récupération des talents:', error);
+          });
+      }, []);
+
 
     return (
         <div className='bg-talents'>

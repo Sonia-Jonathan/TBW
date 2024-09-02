@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -7,17 +7,16 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-
     public function getClipsVideo()
     {
-        
-        // Récupérer la vidéo 1 depuis la base de données
-        $video1 = Video::find(2);
+        // Récupérer la vidéo 1 depuis la base de données avec l'image associée
+        $video1 = Video::with('image')->find(2);
 
         // Vérifier si la vidéo 1 existe
         if (!$video1) {
             return response()->json(['error' => 'La vidéo 1 n\'existe pas.'], 404);
         }
+
         // Formatter les données de la vidéo 1 selon le format requis
         $formattedVideo[] = [
             'title' => 'Clips',
@@ -28,26 +27,28 @@ class VideoController extends Controller
             'video' => [
                 [
                     'src' => $video1->src,
+                    'img_video' => [
+                        'src' => $video1->image->src,
+                        'alt' => $video1->image->alt,
+                    ],
                     'videosLinked' => $this->getLinkedVideos($video1->video_linked)
                 ]
             ]
         ];
 
-        // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
         return response()->json([$formattedVideo]);
-        //response()->json($formattedVideo);
     }
 
     public function getSeriesVideo()
     {
-        
-        // Récupérer la vidéo 1 depuis la base de données
-        $video1 = Video::find(3);
+        // Récupérer la vidéo 1 depuis la base de données avec l'image associée
+        $video1 = Video::with('image')->find(3);
 
         // Vérifier si la vidéo 1 existe
         if (!$video1) {
             return response()->json(['error' => 'La vidéo 1 n\'existe pas.'], 404);
         }
+
         // Formatter les données de la vidéo 1 selon le format requis
         $formattedVideo[] = [
             'title' => 'Series',
@@ -58,14 +59,16 @@ class VideoController extends Controller
             'video' => [
                 [
                     'src' => $video1->src,
+                    'img_video' => [
+                        'src' => $video1->image->src,
+                        'alt' => $video1->image->alt,
+                    ],
                     'videosLinked' => $this->getLinkedVideos($video1->video_linked)
                 ]
             ]
         ];
 
-        // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
         return response()->json([$formattedVideo]);
-        //response()->json($formattedVideo);
     }
 
     private function getLinkedVideos($videoLinkedIds)
@@ -85,7 +88,11 @@ class VideoController extends Controller
                 $linkedVideos[] = [
                     'title' => '',
                     'subtitle' => '',
-                    'src' => $linkedVideo->src
+                    'src' => $linkedVideo->src,
+                    'img_video' => [
+                        'src' => $linkedVideo->image->src,
+                        'alt' => $linkedVideo->image->alt,
+                    ]
                 ];
             }
         }
@@ -95,14 +102,14 @@ class VideoController extends Controller
 
     public function getArticle1()
     {
-        
-        // Récupérer la vidéo 1 depuis la base de données
-        $video1 = Video::find(1);
+        // Récupérer la vidéo 1 depuis la base de données avec l'image associée
+        $video1 = Video::with('image')->find(1);
 
         // Vérifier si la vidéo 1 existe
         if (!$video1) {
             return response()->json(['error' => 'La vidéo 1 n\'existe pas.'], 404);
         }
+
         // Formatter les données de la vidéo 1 selon le format requis
         $formattedVideo[] = [
             'title' => 'Article1',
@@ -110,73 +117,25 @@ class VideoController extends Controller
             'btnTitle' => 'Regarder',
             'link' => 'article1',
             'page'=> json_decode($video1->page, true),
-            'video' => 
-                [
-                    'id'=> $video1->id,
-                    'src' => $video1->src,
+            'video' => [
+                'id'=> $video1->id,
+                'src' => $video1->src,
+                'img_video' => [
+                    'src' => $video1->image->src,
+                    'alt' => $video1->image->alt,
                 ]
-            
+            ]
         ];
 
-        // // Retourner les données formatées de la vidéo 1 en tant que réponse JSON
         return response()->json($formattedVideo);
-        //response()->json($formattedVideo);
     }
 
-    
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Video $video)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Video $video)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Video $video)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Video $video)
-    {
-        //
-    }
+    // Méthodes restantes pour les opérations CRUD
+    public function index() {}
+    public function create() {}
+    public function store(Request $request) {}
+    public function show(Video $video) {}
+    public function edit(Video $video) {}
+    public function update(Request $request, Video $video) {}
+    public function destroy(Video $video) {}
 }

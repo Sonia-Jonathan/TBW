@@ -57,6 +57,7 @@ function Vision(props) {
             <VideoSection
               key={i}
               videoSrc={value.video[0]?.src}
+              imgVideo={value.video[0]?.img_video}
               title={value.title}
               subtitle={value.subtitle}
               btnTitle={value.btnTitle}
@@ -72,6 +73,7 @@ function Vision(props) {
             <VideoSection
               key={i}
               videoSrc={value.video[0]?.src}
+              imgVideo={value.video[0]?.img_video}
               title={value.title}
               subtitle={value.subtitle}
               btnTitle={value.btnTitle}

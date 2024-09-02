@@ -3,10 +3,10 @@ import BlocText from '../blockText/BlocText';
 
 import "./VideoSection.css";
 
-function VideoSection({ videoSrc, title, subtitle, btnTitle, btnFunction, link }) {
+function VideoSection({ videoSrc, imgVideo, title, subtitle, btnTitle, btnFunction, link }) {
   const videoRef = useRef(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,7 +46,7 @@ function VideoSection({ videoSrc, title, subtitle, btnTitle, btnFunction, link }
           <div
             className="image-wrapper"
             style={{
-              backgroundImage: 'url(https://i.pinimg.com/564x/ba/33/62/ba33621d4c8c854facf27cd767de65ad.jpg)', 
+              backgroundImage: `url(${imgVideo.src})`, 
               backgroundSize:'cover',
               height: '100vh',
               width: '100%',

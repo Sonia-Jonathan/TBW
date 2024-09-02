@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('img_id');
-            $table->foreign('img_id')->references('id')->on('images')->onDelete('cascade');
-            $table->json('page')->nullable(false);
-            $table->string('src')->nullable(false);
-            $table->json('video_linked')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('categories');
     }
 };
