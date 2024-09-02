@@ -22,7 +22,6 @@ function Talents(props) {
     useEffect(() => {
         axios.get('http://localhost:8000/api/talents')
             .then(response => {
-                console.log(response.data)
                 setTalents(response.data);
             })
             .catch(error => {
