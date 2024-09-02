@@ -28,6 +28,7 @@ function Home(props) {
                         <VideoSection
                             key={i}
                             videoSrc={value.video?.src}
+                            imgVideo={value.video?.img_video}
                             title={value.title}
                             subtitle={value.subtitle}
                             btnTitle={value.btnTitle}
@@ -43,6 +44,7 @@ function Home(props) {
                         <VideoSection
                             key={i}
                             videoSrc={value.video?.src}
+                            imgVideo={value.video?.img_video}
                             title={value.title}
                             subtitle={value.subtitle}
                             btnTitle={value.btnTitle}
@@ -58,6 +60,8 @@ function Home(props) {
                         <VideoSection
                             key={i}
                             videoSrc={value.video?.src}
+                            imgVideo={value.video?.img_video}
+
                             title={value.title}
                             subtitle={value.subtitle}
                             btnTitle={value.btnTitle}

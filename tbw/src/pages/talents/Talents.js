@@ -18,17 +18,17 @@ function Talents(props) {
 
     const [talents, setTalents] = useState("");
 
-    const dataSrc = talentDetails;
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/talents')
-          .then(response => {
-            setTalents(response.data);
-          })
-          .catch(error => {
-            console.error('Erreur lors de la récupération des talents:', error);
-          });
-      }, []);
+            .then(response => {
+                console.log(response.data)
+                setTalents(response.data);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des talents:', error);
+            });
+    }, []);
 
 
     return (
@@ -45,26 +45,26 @@ function Talents(props) {
                 </div>
             )}
 
-            <div className='mt-5 '>
-                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
-                <div className='col-lg-10 pb-5 m-auto'>
-                    <ImgTalents dataSrc={dataSrc} />
 
-                </div>
-            </div>
             <div className='mt-5 '>
-                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
-                <div className='col-lg-10 pb-5 m-auto'>
-                    <ImgTalents dataSrc={dataSrc} />
+                {talents && (
+                    <div>
+                        {talents.map((value, i) => (
+                            <div key={i}>
+                                <h2 className='text-center text-white'>{value.categorie}</h2>
+                                {value.talents && (
+                                    <div className='col-lg-10 pb-5 m-auto'>
 
-                </div>
-            </div>
-            <div className='mt-5 '>
-                <h2 className='text-center text-white'>Catégories/ Thèmes</h2>
-                <div className='col-lg-10 pb-5 m-auto'>
-                    <ImgTalents dataSrc={dataSrc} />
+                                        <ImgTalents dataSrc={value.talents} />
 
-                </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+
+                    </div>
+
+                )}
             </div>
 
         </div>
