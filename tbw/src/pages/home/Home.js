@@ -6,11 +6,13 @@ import "./Home.css";
 
 
 function Home(props) {
+    const urlApi = process.env.REACT_APP_URL_API;
+
     const [play, setPlay] = useState(false);
     const [article1, setArticle1] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/article1')
+        axios.get(`${urlApi}/article1`)
             .then(response => {
                 let articleData = response.data;
                 setArticle1(articleData);

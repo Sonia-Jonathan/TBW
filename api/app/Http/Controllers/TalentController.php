@@ -29,8 +29,8 @@ class TalentController extends Controller
                             'prenom' => $talent->prenom,
                             'desc' => $talent->description,
                             'img' => [
-                                'src' => $talent->image->src,  // Assurez-vous que `src` est le champ correct pour l'URL de l'image
-                                'alt' => $talent->image->alt,  // Assurez-vous que `alt` est le champ correct pour le texte alternatif de l'image
+                                'src' => $talent->image->src,  
+                                'alt' => $talent->image->alt,  
                             ],
                         ];
                     })->values()->all(),

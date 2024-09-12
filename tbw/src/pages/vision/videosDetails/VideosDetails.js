@@ -7,6 +7,8 @@ import "./VideosDetails.css";
 
 function VideosDetails(props) {
 
+    const urlApi = process.env.REACT_APP_URL_API;
+
     const { page } = useParams();
     const [videosDetails, setVideosDetails] = useState([]);
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ function VideosDetails(props) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/${page}Video`)
+        axios.get(`${urlApi}/${page}Video`)
             .then(response => {
                 const videos = response.data[0][0].video;
 

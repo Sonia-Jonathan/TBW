@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './Header.css';
 
+import logo from '../../asset/logos/Gri-logo-5.png';
+
 function Header({ color }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -17,11 +19,11 @@ function Header({ color }) {
           id="basic-navbar-nav" 
           className="custom-collapse" 
         >
-          <Nav className="navbar col-lg-6 justify-content-lg-center m-lg-auto">
-            <Navbar.Brand href="/" className="neon-text-navbar text-white">TBW</Navbar.Brand>
-            <Nav.Link className="neon-text-navbar text-white" href="/vision">Vision</Nav.Link>
-            <Nav.Link className="neon-text-navbar text-white" href="/music">Music</Nav.Link>
-            <Nav.Link className="neon-text-navbar text-white" href="/talents">Talents</Nav.Link>
+          <Nav className="navbar col-6 col-lg-5 justify-content-lg-center m-lg-auto">
+            <Nav.Link className="col-12 col-lg-2 neon-text-navbar text-white text-lg-center" href="/"><img className='col-2 col-lg-6' src={logo}/></Nav.Link>
+            <Nav.Link className="col-12 col-lg-2 neon-text-navbar text-white text-lg-center" href="/vision">Vision</Nav.Link>
+            <Nav.Link className="col-12 col-lg-2 neon-text-navbar text-white text-lg-center" href="/music">Music</Nav.Link>
+            <Nav.Link className="col-12 col-lg-2 neon-text-navbar text-white text-lg-center" href="/talents">Talents</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

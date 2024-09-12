@@ -6,6 +6,8 @@ import VideoSection from '../../components/videoSection/VideoSection';
 import "./Vision.css";
 
 function Vision(props) {
+  const urlApi = process.env.REACT_APP_URL_API;
+
   const [play, setPlay] = useState(false);
   const [clips, setClips] = useState([]);
   const [series, setSeries] = useState([]);
@@ -16,7 +18,7 @@ function Vision(props) {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    axios.get('http://localhost:8000/api/clipsVideo')
+    axios.get(`${urlApi}/clipsVideo`)
       .then(response => {
         setClips(response.data[0]);
       })
@@ -26,7 +28,7 @@ function Vision(props) {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/seriesVideo')
+    axios.get(`${urlApi}/seriesVideo`)
       .then(response => {
         setSeries(response.data[0]);
       })

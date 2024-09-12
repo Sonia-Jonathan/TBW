@@ -4,11 +4,12 @@ import "./Talents.css";
 import BlocText from '../../components/blockText/BlocText';
 import ImgTalents from '../../components/imgTalents/ImgTalents';
 
-import talentDetails from '../../asset/json/talents/talentDetails.json'
 import axios from 'axios';
 
 
 function Talents(props) {
+    const urlApi = process.env.REACT_APP_URL_API;
+
     const blocTexTitle = [
         {
             title: "Talents",
@@ -20,7 +21,7 @@ function Talents(props) {
 
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/talents')
+        axios.get(`${urlApi}/talents`)
             .then(response => {
                 setTalents(response.data);
             })
