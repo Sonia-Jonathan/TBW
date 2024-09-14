@@ -16,7 +16,7 @@ jobs:
 
     - name: Deploy backend to VPS
       run: |
-        ssh soniamouna@147.79.115.55 "cd /var/www/tbw/api && git pull origin main && composer install && php artisan migrate"
+        ssh root@147.79.115.55 "cd /var/www/tbw/api && git pull origin main && composer install && php artisan migrate"
 
   deploy-front:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
 
     - name: Deploy frontend to VPS
       run: |
-        ssh soniamouna@147.79.115.55 "cd /var/www/tbw/tbw && git pull origin main && npm install && npm run build"
+        ssh root@147.79.115.55 "cd /var/www/tbw/tbw && git pull origin main && npm install && npm run build"
