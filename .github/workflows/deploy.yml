@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy-back:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy backend to VPS
+      run: |
+        ssh soniamouna@147.79.115.55 "cd /var/www/tbw/api && git pull origin main && composer install && php artisan migrate"
+
+  deploy-front:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy frontend to VPS
+      run: |
+        ssh soniamouna@147.79.115.55 "cd /var/www/tbw/tbw && git pull origin main && npm install && npm run build"
