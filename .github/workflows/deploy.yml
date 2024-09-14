@@ -1,4 +1,4 @@
-name: Deploy tbw
+name: Deploy
 
 on:
   push:
@@ -14,10 +14,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Setup SSH
+    - name: Set up SSH
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H 147.79.115.55 >> ~/.ssh/known_hosts
 
