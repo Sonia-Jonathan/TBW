@@ -1,4 +1,4 @@
-name: Deploy tbw
+name: Deploy
 
 on:
   push:
