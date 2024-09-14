@@ -9,26 +9,22 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          mkdir -p ~/.ssh
-          ssh-keyscan -H 147.79.115.55 >> ~/.ssh/known_hosts
+    - name: Set up SSH key
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        eval "$(ssh-agent -s)"
+        ssh-add private_key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy to VPS
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          # Déploiement pour l'environnement de production
-          ssh -i private_key root@147.79.115.55 "set -x; cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate && cd ../tbw && npm install && npm run build"
-          # Déploiement pour l'environnement de test (si applicable)
-          ssh -i private_key root@147.79.115.55 "set -x; cd /var/www/tbw && git pull origin dev && cd api && composer install && php artisan migrate && cd ../tbw && npm install && npm run build"
+    - name: Deploy to VPS
+      run: |
+        ssh -o StrictHostKeyChecking=no root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
