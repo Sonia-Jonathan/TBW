@@ -23,4 +23,4 @@ jobs:
 
     - name: Deploy to VPS
       run: |
-        ssh -i ~/.ssh/id_rsa root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
+        ssh -i ~/.ssh/id_rsa_hostinger root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
