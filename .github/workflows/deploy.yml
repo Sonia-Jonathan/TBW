@@ -14,17 +14,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH key
+    - name: Setup SSH
       run: |
-        echo "$SSH_PRIVATE_KEY" > private_key
-        chmod 600 private_key
-        eval "$(ssh-agent -s)"
-        ssh-add private_key
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa_hostinger
+        chmod 600 ~/.ssh/id_rsa_hostinger
+        ssh-keyscan -H 147.79.115.55 >> ~/.ssh/known_hosts
 
     - name: Deploy to VPS
       run: |
-        ssh -o StrictHostKeyChecking=no root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh -i ~/.ssh/id_rsa root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
