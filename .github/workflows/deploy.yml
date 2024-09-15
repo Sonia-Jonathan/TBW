@@ -22,19 +22,9 @@ jobs:
         ssh-keyscan -H 147.79.115.55 >> ~/.ssh/known_hosts
 
     - name: Deploy to VPS
-      if: github.ref == 'refs/heads/main'
       run: |
         ssh -i ~/.ssh/id_ed25519 root@147.79.115.55 "
-          cd /var/www/prod/tbw && git pull origin main &&
-          cd tbw && npm install && npm run build &&
-          cd ../api && composer install && php artisan migrate
-        "
-
-    - name: Deploy to Test Environment
-      if: github.ref == 'refs/heads/dev'
-      run: |
-        ssh -i ~/.ssh/id_ed25519 root@147.79.115.55 "
-          cd /var/www/test/tbw && git pull origin dev &&
+          cd /var/www/tbw && git pull origin main &&
           cd tbw && npm install && npm run build &&
           cd ../api && composer install && php artisan migrate
         "
