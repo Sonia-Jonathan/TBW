@@ -23,4 +23,8 @@ jobs:
 
     - name: Deploy to VPS
       run: |
-        ssh -i ~/.ssh/id_ed25519 root@147.79.115.55 "cd /var/www/tbw && git pull origin main && cd api && composer install && php artisan migrate"
+        ssh -i ~/.ssh/id_ed25519 root@147.79.115.55 "
+          cd /var/www/tbw && git pull origin main &&
+          cd tbw && npm install && npm run build &&
+          cd ../api && composer install && php artisan migrate
+        "
