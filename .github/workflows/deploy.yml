@@ -1,4 +1,4 @@
-name: Deploy to VPS Test
+name: Deploy to VPS main
 
 on:
   push:
@@ -13,19 +13,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Add SSH Key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Add server to known_hosts
-      run: ssh-keyscan -H 178.16.130.125 >> ~/.ssh/known_hosts
-
-    - name: Deploy Frontend (Test)
+    - name: Set up SSH
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -H 178.16.130.1255 >> ~/.ssh/known_hosts
 
-    - name: Deploy Backend (Test)
+    - name: Deploy to VPS
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-prod/api && git pull origin main && composer install && php artisan migrate"
+        ssh -i ~/.ssh/id_ed25519 root@178.16.130.125 "
+          cd /var/www/tbw && git pull origin main &&
+          cd tbw && npm install && npm run build &&
+          cd ../api && composer install && php artisan migrate
+        "
 
