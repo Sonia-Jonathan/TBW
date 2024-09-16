@@ -3,7 +3,7 @@ name: Deploy Test
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   deploy:
@@ -26,8 +26,8 @@ jobs:
 
     - name: Deploy Frontend
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/tbw && git pull origin dev && npm install && npm run build"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-prod/tbw && git pull origin dev && npm install && npm run build"
 
     - name: Deploy Backend
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-prod/api && git pull origin dev && composer install && php artisan migrate"
