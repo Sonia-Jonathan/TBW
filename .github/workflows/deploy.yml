@@ -28,24 +28,4 @@ jobs:
     - name: Deploy Backend (Test)
       run: |
         ssh -o StrictHostKeyChecking=no root@178.16.130.125 << 'EOF'
-          # Navigate to the backend directory
-          cd /var/www/tbw-test/api
-          
-          # Pull the latest code from the dev branch
-          git pull origin dev
-          
-          # Install or update dependencies
-          composer install --no-dev --optimize-autoloader
-          
-          # Run database migrations
-          php artisan migrate --force
-          
-          # Cache configuration and routes
-          php artisan config:cache
-          php artisan route:cache
-          
-          # Restart PHP-FPM service if necessary (adjust version if needed)
-          sudo systemctl restart php8.0-fpm
-          
-          # Optionally restart other services or clear caches
-        EOF
+        "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
