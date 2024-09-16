@@ -27,5 +27,4 @@ jobs:
 
     - name: Deploy Backend (Test)
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 << 'EOF'
-        "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
