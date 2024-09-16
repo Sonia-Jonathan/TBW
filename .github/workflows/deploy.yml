@@ -1,4 +1,4 @@
-name: Deploy to VPS main
+name: Deploy Production
 
 on:
   push:
@@ -13,18 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH
+    - name: Deploy Frontend
       run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan -H 178.16.130.125 >> ~/.ssh/known_hosts
+        ssh root@178.16.130.125 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
 
-    - name: Deploy to VPS
+    - name: Deploy Backend
       run: |
-        ssh -i ~/.ssh/id_ed25519 root@178.16.130.125 "
-          cd /var/www/tbw-prod && git pull origin main &&
-          cd tbw && npm install && npm run build &&
-          cd ../api && composer install && php artisan migrate
-        "
+        ssh root@178.16.130.125 "cd /var/www/tbw-prod/api && git pull origin main && composer install && php artisan migrate"
+
 
