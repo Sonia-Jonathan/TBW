@@ -1,9 +1,9 @@
-name: Deploy to VPS
+name: Deploy to VPS Test
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
@@ -21,6 +21,11 @@ jobs:
     - name: Add server to known_hosts
       run: ssh-keyscan -H 178.16.130.125 >> ~/.ssh/known_hosts
 
-    - name: Deploy to VPS
+    - name: Deploy Frontend (Test)
       run: |
-        ssh root@178.16.130.125 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/tbw && git pull origin dev && npm install && npm run build"
+
+    - name: Deploy Backend (Test)
+      run: |
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
+
