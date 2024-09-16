@@ -23,8 +23,6 @@ function Talents(props) {
     useEffect(() => {
         axios.get(`${urlApi}/talents`)
             .then(response => {
-                console.log("Données de l'API :", response.data); // Affiche les données reçues
-
                 setTalents(response.data);
             })
             .catch(error => {
