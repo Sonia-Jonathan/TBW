@@ -17,7 +17,7 @@ function Talents(props) {
         }
     ]
 
-    const [talents, setTalents] = useState("");
+    const [talents, setTalents] = useState([]);
 
 
     useEffect(() => {
