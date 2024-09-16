@@ -1,4 +1,4 @@
-name: Deploy to VPS Test
+name: Deploy Test
 
 on:
   push:
@@ -13,18 +13,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Add SSH Key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Add server to known_hosts
-      run: ssh-keyscan -H 178.16.130.125 >> ~/.ssh/known_hosts
-
-    - name: Deploy Frontend (Test)
+    - name: Setup SSH
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/tbw && git pull origin dev && npm install && npm run build"
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        chmod 600 ~/.ssh/id_ed25519
+        chmod 644 ~/.ssh/known_hosts
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
 
-    - name: Deploy Backend (Test)
+    - name: Deploy Frontend
       run: |
-        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/tbw && git pull origin main && npm install && npm run build"
+
+    - name: Deploy Backend
+      run: |
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/api && git pull origin main && composer install && php artisan migrate"
