@@ -1,4 +1,4 @@
-name: Deploy Test
+name: Deploy to VPS Test
 
 on:
   push:
@@ -13,10 +13,39 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy Frontend
-      run: |
-        ssh root@<ton-vps> "cd /var/www/tbw-test/tbw && git pull origin dev && npm install && npm run build"
+    - name: Add SSH Key
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy Backend
+    - name: Add server to known_hosts
+      run: ssh-keyscan -H 178.16.130.125 >> ~/.ssh/known_hosts
+
+    - name: Deploy Frontend (Test)
       run: |
-        ssh root@<ton-vps> "cd /var/www/tbw-test/api && git pull origin dev && composer install && php artisan migrate"
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 "cd /var/www/tbw-test/tbw && git pull origin dev && npm install && npm run build"
+
+    - name: Deploy Backend (Test)
+      run: |
+        ssh -o StrictHostKeyChecking=no root@178.16.130.125 << 'EOF'
+          # Navigate to the backend directory
+          cd /var/www/tbw-test/api
+          
+          # Pull the latest code from the dev branch
+          git pull origin dev
+          
+          # Install or update dependencies
+          composer install --no-dev --optimize-autoloader
+          
+          # Run database migrations
+          php artisan migrate --force
+          
+          # Cache configuration and routes
+          php artisan config:cache
+          php artisan route:cache
+          
+          # Restart PHP-FPM service if necessary (adjust version if needed)
+          sudo systemctl restart php8.0-fpm
+          
+          # Optionally restart other services or clear caches
+        EOF
