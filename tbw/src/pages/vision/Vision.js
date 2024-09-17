@@ -16,8 +16,6 @@ function Vision(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
     axios.get(`${urlApi}/clipsVideo`)
       .then(response => {
         setClips(response.data[0]);
@@ -38,17 +36,25 @@ function Vision(props) {
   }, []);
 
   const clipsFunction = () => {
+    document.documentElement.style.scrollSnapType = 'none'; // Désactive le scroll-snap
     setPlay(true);
     setVideosDetails(clips[0].video);
     setPage(clips[0].page);
     navigate(`/vision/${clips[0].page}/details`);
+    setTimeout(() => {
+      document.documentElement.style.scrollSnapType = 'y mandatory'; // Réactiver le scroll-snap
+    }, 500);
   };
 
   const seriesFunction = () => {
+    document.documentElement.style.scrollSnapType = 'none';  // Désactive le scroll-snap
     setPlay(true);
     setVideosDetails(clips[0].video);
     setPage(series[0].page);
     navigate(`/vision/${series[0].page}/details`);
+    setTimeout(() => {
+      document.documentElement.style.scrollSnapType = 'y mandatory'; // Réactiver le scroll-snap
+    }, 500);
   };
 
   return (

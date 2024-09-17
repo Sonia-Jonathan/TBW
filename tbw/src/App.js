@@ -9,7 +9,7 @@ import Talents from './pages/talents/Talents';
 import Vision from './pages/vision/Vision';
 import VideosDetails from './pages/vision/videosDetails/VideosDetails';
 import UniqueTitles from './pages/sound/UniqueTitles/UniqueTitles';
-import Store from './pages/store/Store';
+// import Store from './pages/store/Store';
 import Articles1 from './pages/articles/Articles1';
 import Articles2 from './pages/articles/Articles2';
 import Articles3 from './pages/articles/Articles3';

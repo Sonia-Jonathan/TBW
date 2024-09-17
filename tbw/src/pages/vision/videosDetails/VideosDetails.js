@@ -12,7 +12,6 @@ function VideosDetails(props) {
     const { page } = useParams();
     const [videosDetails, setVideosDetails] = useState([]);
     const navigate = useNavigate();
-
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     useEffect(() => {
@@ -28,6 +27,8 @@ function VideosDetails(props) {
                         newvideos[0].src = newvideos[0].src.replace('?background=true&autoPlay=true&loop=true', ''); //?autoPlay=true&volume=0&showControls=true
                         setVideosDetails(newvideos);
                     }
+                    // window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
                 }
             })
             .catch(error => {

@@ -21,6 +21,7 @@ function Talents(props) {
 
 
     useEffect(() => {
+        document.documentElement.style.scrollSnapType = 'none';
         axios.get(`${urlApi}/talents`)
             .then(response => {
                 setTalents(response.data);

@@ -16,11 +16,10 @@
     opacity: 1;
 }
 
-
-html {
-    scroll-snap-type: y mandatory;
+.video-details {
+    min-height: 100vh;
+    background-color: black;
 }
-
 
 .video-details section {
     min-height: 100vh;
@@ -28,10 +27,6 @@ html {
 }
 
 .video-details .bg-video {
-    /* min-height: 100vh;
-    background-color: black;
-    width: 100%; */
-
     min-height: 100vh;
     background-color: black;
     width: 100%;
