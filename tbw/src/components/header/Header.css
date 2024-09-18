@@ -53,6 +53,7 @@
     } 
 
     .header-bg {
-        display: none;
+        backdrop-filter:none;
+        background-color: transparent;
     }
 }
