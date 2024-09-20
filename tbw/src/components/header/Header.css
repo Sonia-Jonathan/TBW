@@ -18,7 +18,7 @@
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     
     .custom-toggler {
         border-color: white;
