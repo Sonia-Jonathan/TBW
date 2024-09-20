@@ -58,7 +58,7 @@ function VideoSection({ videoSrc, imgVideo, title, subtitle, btnTitle, btnFuncti
       )}
 
       {(title || subtitle) && (
-        <div className='br block-text col-lg-12 my-lg-5'>
+        <div className='block-text col-lg-12 my-lg-5'>
           <BlocText title={title} subtitle={subtitle} btnTitle={btnTitle} btnFunction={btnFunction} link={link} />
         </div>
       )}
