@@ -1,3 +1,6 @@
+.br{
+  outline: 1px solid red!important;
+}
 .video-section {
   position: relative;
   padding-bottom: 56.25%;
@@ -70,26 +73,10 @@
 
 }
 
-@media (min-width: 768px) and (max-width: 1440px){
-  .video-section {
-    height: 100vh;
-  }
-
-  .bg-video {
-    display: block;
-  }
-
-  .image-wrapper {
-    display: none;
-  }
-
-  .video-section {
-    height: 100vh;
-  }
-
+@media (min-width: 768px) and (max-width:1024px) {
   .block-text {
     position: absolute;
-    bottom: 60px;
+    bottom: 120px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -99,3 +86,4 @@
 
 
 }
+
