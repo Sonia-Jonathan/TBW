@@ -16,7 +16,7 @@ function Sound(props) {
                 <div className='blocTitle'>
                     {blocTexTitle.map((value, i) => (
                         <div key={i} className="col-lg-12 d-flex justify-content-center">
-                            <div>
+                            <div className='mt-lg-4'>
                                 <BlocText key={i} title={value.title} subtitle={value.subtitle} />
                             </div>
                         </div>
