@@ -29,7 +29,6 @@
 }
 
 .block-text {
-  border: 1px solid red;
   position: absolute;
   bottom: 150px;
   z-index: 0;
