@@ -40,11 +40,9 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .video-section {
     height: 100vh;
-    width: 100%;
-
   }
 
   .bg-video {
@@ -62,6 +60,36 @@
   .block-text {
     position: absolute;
     bottom: 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+  }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .video-section {
+    height: 100vh;
+  }
+
+  .bg-video {
+    display: block;
+  }
+
+  .image-wrapper {
+    display: none;
+  }
+
+  .video-section {
+    height: 100vh;
+  }
+
+  .block-text {
+    position: absolute;
+    bottom: 60px;
     display: flex;
     justify-content: center;
     text-align: center;
