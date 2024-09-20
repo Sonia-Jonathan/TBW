@@ -3,5 +3,5 @@
     background: rgb(13, 13, 13);
     min-height: 100vh;
     color: white;
-    scroll-snap-align: none; 
+    scroll-snap-align: start; 
 }
