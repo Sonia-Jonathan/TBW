@@ -73,7 +73,7 @@
 
   .block-text {
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
     display: flex;
     justify-content: center;
     text-align: center;
