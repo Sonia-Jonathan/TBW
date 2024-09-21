@@ -68,3 +68,17 @@
   }
 
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .block-text {
+    position: absolute;
+    bottom: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+  }
+
+}
