@@ -83,7 +83,21 @@
 
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1025px) {
+
+  .block-text {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+  }
+
+}
+
+@media (min-width: 1026px) and (max-width: 1279px) {
 
   .block-text {
     position: absolute;
