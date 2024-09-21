@@ -12,6 +12,10 @@ function Home(props) {
     const [article1, setArticle1] = useState([]);
 
     useEffect(() => {
+        console.log("Largeur de l'écran en pixels : " + window.screen.width);
+        console.log("Hauteur de l'écran en pixels : " + window.screen.height);
+        console.log("Rapport de densité de pixels (devicePixelRatio) : " + window.devicePixelRatio);
+
         axios.get(`${urlApi}/article1`)
             .then(response => {
                 let articleData = response.data;
@@ -39,7 +43,7 @@ function Home(props) {
                     ))}
                 </section>
             )}
-            
+
             {article1 && !play && (
                 <section >
                     {article1.map((value, i) => (
