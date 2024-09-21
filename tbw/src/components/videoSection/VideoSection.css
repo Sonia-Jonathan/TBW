@@ -83,19 +83,9 @@
 
 }
 
-@media (min-width: 1024px) and (max-width: 1270px) {
-  .block-text {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
 
-  }
-}
 
-/* @media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
 
   .block-text {
     position: absolute;
@@ -107,4 +97,4 @@
 
   }
 
-} */
+}
