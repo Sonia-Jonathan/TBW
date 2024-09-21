@@ -87,7 +87,7 @@
 
   .block-text {
     position: absolute;
-    bottom: 40px;
+    bottom: 80px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -95,16 +95,4 @@
 
   }
 
-}
-
-@media (min-width: 1920px) {
-  .block-text {
-    position: absolute;
-    bottom: 1000px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-
-  }
 }
