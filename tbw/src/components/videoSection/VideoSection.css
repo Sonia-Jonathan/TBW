@@ -100,7 +100,7 @@
 @media (min-width: 1279px) and (max-width: 1439px) {
   .block-text {
     position: absolute;
-    bottom: 100px;
+    bottom: 1000px;
     display: flex;
     justify-content: center;
     text-align: center;
