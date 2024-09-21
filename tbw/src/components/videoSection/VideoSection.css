@@ -85,7 +85,7 @@
 
 
 
-@media (min-width: 1024px) and (max-width: 1050px) {
+/* @media (min-width: 1024px) and (max-width: 1279px) {
 
   .block-text {
     position: absolute;
@@ -97,4 +97,16 @@
 
   }
 
+} */
+
+@media (min-width: 1366px) and (max-width: 1439px) {
+  .block-text {
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+  }
 }
