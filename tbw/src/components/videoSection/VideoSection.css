@@ -99,7 +99,7 @@
 
 } */
 
-@media (min-width: 1250px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1050px) {
   .block-text {
     position: absolute;
     bottom: 10px;
