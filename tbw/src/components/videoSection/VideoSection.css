@@ -88,11 +88,14 @@
   .block-text {
     position: absolute;
     bottom: 40px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
 
   }
 
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .block-text {
+    bottom: 80px;
+
+  }
 }
