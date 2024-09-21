@@ -83,7 +83,7 @@
 
 }
 
-@media (min-width: 1024px) and (max-width: 1278px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
 
   .block-text {
     position: absolute;
@@ -97,7 +97,7 @@
 
 }
 
-@media (min-width: 1279px) and (max-width: 1439px) {
+@media (min-width: 1920px) {
   .block-text {
     position: absolute;
     bottom: 1000px;
