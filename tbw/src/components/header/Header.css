@@ -53,6 +53,7 @@
     } 
 
     .header-bg {
+        opacity: 1;
         backdrop-filter:none;
         background-color: transparent;
     }
