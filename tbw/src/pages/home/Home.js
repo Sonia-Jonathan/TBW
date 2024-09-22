@@ -12,9 +12,9 @@ function Home(props) {
     const [article1, setArticle1] = useState([]);
 
     useEffect(() => {
-        console.log("Largeur de l'écran en pixels : " + window.screen.width);
-        console.log("Hauteur de l'écran en pixels : " + window.screen.height);
-        console.log("Rapport de densité de pixels (devicePixelRatio) : " + window.devicePixelRatio);
+        // console.log("Largeur de l'écran en pixels : " + window.screen.width);
+        // console.log("Hauteur de l'écran en pixels : " + window.screen.height);
+        // console.log("Rapport de densité de pixels (devicePixelRatio) : " + window.devicePixelRatio);
 
         axios.get(`${urlApi}/article1`)
             .then(response => {
