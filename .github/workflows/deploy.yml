@@ -16,7 +16,7 @@ jobs:
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY_TBW" > ~/.ssh/tbw-key
+        echo "$SSH_PRIVATE_KEY_TBW" | tr -d '\r' > ~/.ssh/tbw-key
         chmod 600 ~/.ssh/tbw-key
         ssh-keyscan -H 82.112.241.41 >> ~/.ssh/known_hosts
         chmod 644 ~/.ssh/known_hosts
@@ -27,7 +27,7 @@ jobs:
 
     - name: Deploy Frontend
       run: |
-        ssh -o StrictHostKeyChecking=no root@82.112.241.41 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
+        ssh -v -o StrictHostKeyChecking=no root@82.112.241.41 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
 
     - name: Deploy Backend
       run: |
