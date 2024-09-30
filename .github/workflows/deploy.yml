@@ -16,12 +16,12 @@ jobs:
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY_TBW" > ~/.ssh/tbw_key
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
         echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        chmod 600 ~/.ssh/tbw_key
+        chmod 600 ~/.ssh/id_ed25519
         chmod 644 ~/.ssh/known_hosts
       env:
-        SSH_PRIVATE_KEY_TBW: ${{ secrets.SSH_PRIVATE_KEY_TBW }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
 
     - name: Deploy Frontend
