@@ -26,8 +26,8 @@ jobs:
 
     - name: Deploy Frontend
       run: |
-        ssh -o StrictHostKeyChecking=no root@82.112.241.41 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
+        ssh -o StrictHostKeyChecking=no root@195.35.0.219 "cd /var/www/tbw-prod/tbw && git pull origin main && npm install && npm run build"
 
     - name: Deploy Backend
       run: |
-        ssh -o StrictHostKeyChecking=no root@82.112.241.41 "cd /var/www/tbw-prod/api && git pull origin main && composer install && php artisan migrate"
+        ssh -o StrictHostKeyChecking=no root@195.35.0.219 "cd /var/www/tbw-prod/api && git pull origin main && composer install && php artisan migrate"
