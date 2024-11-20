@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CitationController;
 use App\Http\Controllers\TalentController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/clipsVideo', [VideoController::class, 'getClipsVideo']);
 Route::get('/seriesVideo', [VideoController::class, 'getSeriesVideo']);
 Route::get('/article1', [VideoController::class, 'getArticle1']);
+Route::get('/citations/{id}', [CitationController::class, 'getCitationId']);
 Route::get('/talents', [TalentController::class, 'index']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

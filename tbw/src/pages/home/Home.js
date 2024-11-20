@@ -3,13 +3,28 @@ import axios from 'axios';
 import VideoSection from '../../components/videoSection/VideoSection';
 import fde from '../../asset/imgTest/fdetbw.png';
 import "./Home.css";
+import Citation from '../../components/citation/Citation';
 
 
 function Home(props) {
     const urlApi = process.env.REACT_APP_URL_API;
 
     const [play, setPlay] = useState(false);
+    const [citation, setCitation] = useState([]);
+
     const [article1, setArticle1] = useState([]);
+
+    useEffect(() => {
+
+        axios.get(`${urlApi}/citations/1`)
+            .then(response => {
+                let citationData = response.data;
+                setCitation(citationData);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données de la vidéo:', error);
+            });
+    }, []);
 
     useEffect(() => {
 
@@ -25,7 +40,7 @@ function Home(props) {
 
     return (
         <div className='bg-vision'>
-           
+
             {article1 && !play && (
                 <section >
                     {article1.map((value, i) => (
@@ -41,9 +56,10 @@ function Home(props) {
                     ))}
                 </section>
             )}
- {article1 && !play && (
+            {citation && !play && (
                 <section>
-                    <div className=' my-5 tweet-section'>
+                    <Citation citationDetails={citation}/>
+                    {/* <div className=' my-5 tweet-section'>
                         <img src={fde} alt="Background" />
 
                         <div className=' row  d-flex justify-content-center  '>
@@ -63,18 +79,18 @@ function Home(props) {
                                     </p>
 
                                 </div>
-                            </div>
-                            <div className='  my-5  col-lg-12 d-flex justify-content-center media'>
+                            </div> */}
+                    {/*<div className='  my-5  col-lg-12 d-flex justify-content-center media'>
                                 {article1.map((value, i) => (
                                     <div key={i} className='text-white d-flex justify-content-center citation-video'>
                                         <iframe className='sproutvideo-player ' width={450} height={250} src={value.video?.src.split('?')[0]} allowFullScreen></iframe>
                                     </div>
                                 ))}
-                                {/* <div className='text-white'>image</div> */}
-                            </div>
+                                <div className='text-white'>image</div> 
+                            </div>*/}
 
-                        </div>
-                    </div>
+                    {/* </div>
+                    </div>*/}
                 </section>
             )}
             {article1 && !play && (
@@ -93,7 +109,7 @@ function Home(props) {
                 </section>
             )}
 
-            
+
 
             {article1 && !play && (
                 <section >
