@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import VideoSection from '../../components/videoSection/VideoSection';
-
+import fde from '../../asset/imgTest/fdetbw.png';
 import "./Home.css";
 
 
@@ -12,9 +12,6 @@ function Home(props) {
     const [article1, setArticle1] = useState([]);
 
     useEffect(() => {
-        // console.log("Largeur de l'écran en pixels : " + window.screen.width);
-        // console.log("Hauteur de l'écran en pixels : " + window.screen.height);
-        // console.log("Rapport de densité de pixels (devicePixelRatio) : " + window.devicePixelRatio);
 
         axios.get(`${urlApi}/article1`)
             .then(response => {
@@ -28,6 +25,58 @@ function Home(props) {
 
     return (
         <div className='bg-vision'>
+           
+            {article1 && !play && (
+                <section >
+                    {article1.map((value, i) => (
+                        <VideoSection
+                            key={i}
+                            videoSrc={value.video?.src}
+                            imgVideo={value.video?.img_video}
+                            title={value.title}
+                            subtitle={value.subtitle}
+                            btnTitle={value.btnTitle}
+                            link={value.link}
+                        />
+                    ))}
+                </section>
+            )}
+ {article1 && !play && (
+                <section>
+                    <div className=' my-5 tweet-section'>
+                        <img src={fde} alt="Background" />
+
+                        <div className=' row  d-flex justify-content-center  '>
+
+                            <div className=' mt-5 p-5 col-lg-10 text-citation citation' >
+                                <div className='' >
+                                    20/01/2024
+                                </div>
+                                <div className='citation-bar'>
+                                    <hr></hr>
+                                </div>
+                                <div className='mt-3 '>
+
+                                    <p>
+                                        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad. "
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div className='  my-5  col-lg-12 d-flex justify-content-center media'>
+                                {article1.map((value, i) => (
+                                    <div key={i} className='text-white d-flex justify-content-center citation-video'>
+                                        <iframe className='sproutvideo-player ' width={450} height={250} src={value.video?.src.split('?')[0]} allowFullScreen></iframe>
+                                    </div>
+                                ))}
+                                {/* <div className='text-white'>image</div> */}
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            )}
             {article1 && !play && (
                 <section >
                     {article1.map((value, i) => (
@@ -44,21 +93,7 @@ function Home(props) {
                 </section>
             )}
 
-            {article1 && !play && (
-                <section >
-                    {article1.map((value, i) => (
-                        <VideoSection
-                            key={i}
-                            videoSrc={value.video?.src}
-                            imgVideo={value.video?.img_video}
-                            title={value.title}
-                            subtitle={value.subtitle}
-                            btnTitle={value.btnTitle}
-                            link={value.link}
-                        />
-                    ))}
-                </section>
-            )}
+            
 
             {article1 && !play && (
                 <section >
