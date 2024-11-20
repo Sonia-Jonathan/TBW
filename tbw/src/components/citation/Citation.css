@@ -22,8 +22,8 @@
     border-radius: 30px;
     color: white;
     box-shadow: 
-    -3px 5px 10px rgb(0, 0, 0),  
-    2px -1px 10px grey; 
+    3px 5px 10px rgb(0, 0, 0),  
+    -2px 1px 10px rgba(255, 255, 255, 0); 
 }
 
 
@@ -41,7 +41,9 @@
 
 .citation-media{
     border-radius: 10px;
-    box-shadow: -5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 
+    5px 5px 10px rgb(0, 0, 0),  
+    -2px 1px 10px rgba(255, 255, 255, 0);
     width: 448px;
     height: 250px;
 }
