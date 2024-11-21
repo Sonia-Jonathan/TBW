@@ -12,7 +12,7 @@ function Citation({ citationDetails }) {
                     <img className='bg' src={fde} alt="Background" />
 
                     <div className=' row  d-flex justify-content-center  '>
-                        <div className=' mt-5 mt-lg-5 py-4 px-5 p-lg-5 col-10 col-lg-10 text-citation citation' >
+                        <div className=' mt-5 mt-lg-5 col-10 col-lg-10 text-citation citation' >
                             <div className='' >
                                 {value.publication_date}
                             </div>

@@ -68,6 +68,17 @@
         font-family: monospace;
     }
 
+    
+}
+
+@media (max-width: 768px) {
+    .citation{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
     .citation-media{
         width: 365px;
         height: 250px;
@@ -75,5 +86,37 @@
     .citation-media iframe{
         width: 365px;
         height: 250px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .citation{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .citation{
+        padding: 30px;
+    }
+    .citation-media{
+        height: 190px;
+    }
+    .citation-media iframe{
+        height: 190px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .citation{
+        padding-top: 50px;
+        padding-bottom: 40px;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 }
