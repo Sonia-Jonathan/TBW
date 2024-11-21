@@ -62,7 +62,7 @@
     height: 100%;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1440px) {
     .text-citation{
         font-size:large;
         font-family: monospace;
