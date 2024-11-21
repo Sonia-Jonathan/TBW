@@ -7,12 +7,12 @@ function Citation({ citationDetails }) {
     return (
         <div>
             {citationDetails.map((value, i) => (
-                <div key={i} className=' my-5 tweet-section'>
+                <div key={i} className=' my-5 my-lg-5 tweet-section'>
                     {/* <img src={value.bg.src} alt="Background" /> */}
                     <img className='bg' src={fde} alt="Background" />
 
                     <div className=' row  d-flex justify-content-center  '>
-                        <div className=' mt-5 p-5 col-lg-10 text-citation citation' >
+                        <div className=' mt-5 mt-lg-5 py-4 px-5 p-lg-5 col-10 col-lg-10 text-citation citation' >
                             <div className='' >
                                 {value.publication_date}
                             </div>
@@ -28,13 +28,11 @@ function Citation({ citationDetails }) {
                             </div>
                         </div>
                         
-                        <div className='  my-5  col-lg-12 d-flex justify-content-center media'>
+                        <div className=' my-5  col-lg-12 d-flex justify-content-center media'>
                             <div key={i} className='text-white d-flex justify-content-center citation-media'>
                                 {value.video && (
                                     <iframe
                                         className='sproutvideo-player '
-                                        width={448}
-                                        height={250}
                                         src={value.video?.src.split('?')[0]}
                                         allowFullScreen>
                                     </iframe>

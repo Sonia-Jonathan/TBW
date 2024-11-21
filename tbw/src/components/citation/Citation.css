@@ -31,6 +31,7 @@
     font-size:xx-large;
     font-family: monospace;
 }
+
 .text-citation p{
    font-style: italic;
 }
@@ -50,6 +51,8 @@
 
 .citation-media iframe{
     border-radius: 10px;
+    width: 448px;
+    height: 250px;
 }
 
 .citation-media img{
@@ -57,4 +60,20 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 1024px) {
+    .text-citation{
+        font-size:large;
+        font-family: monospace;
+    }
+
+    .citation-media{
+        width: 365px;
+        height: 250px;
+    }
+    .citation-media iframe{
+        width: 365px;
+        height: 250px;
+    }
 }
