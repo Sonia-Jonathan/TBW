@@ -83,7 +83,7 @@
         width: 365px;
         height: 250px;
     }
-    .citation-media iframe{
+    .citation-media iframe, .citation-media img{
         width: 365px;
         height: 250px;
     }
