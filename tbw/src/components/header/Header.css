@@ -41,15 +41,17 @@
         z-index: 1000; 
         display: flex;
         flex-direction: column;
-        align-items: flex-start; 
-        padding-left: 15px; 
-        padding-top: 50px;padding-bottom: 1500px;  /*évite de voir ce qu'il y a derriere le menu*/
+        align-items: center; 
+        padding-top: 70px;
+        padding-bottom: 1500px;  /*évite de voir ce qu'il y a derriere le menu*/
     }
 
     .custom-collapse .nav-link, .custom-collapse .nav-brand {
         color: white;
-        text-align: left; 
+        text-align: center; 
         width: 100%;
+        font-size:x-large; 
+
     } 
 
     .header-bg {
