@@ -11,6 +11,7 @@ function Home(props) {
 
     const [play, setPlay] = useState(false);
     const [citation, setCitation] = useState([]);
+    const [citation2, setCitation2] = useState([]);
 
     const [article1, setArticle1] = useState([]);
 
@@ -20,6 +21,18 @@ function Home(props) {
             .then(response => {
                 let citationData = response.data;
                 setCitation(citationData);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données de la vidéo:', error);
+            });
+    }, []);
+
+    useEffect(() => {
+
+        axios.get(`${urlApi}/citations/2`)
+            .then(response => {
+                let citationData = response.data;
+                setCitation2(citationData);
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des données de la vidéo:', error);
@@ -59,38 +72,12 @@ function Home(props) {
             {citation && !play && (
                 <section>
                     <Citation citationDetails={citation}/>
-                    {/* <div className=' my-5 tweet-section'>
-                        <img src={fde} alt="Background" />
+                </section>
+            )}
 
-                        <div className=' row  d-flex justify-content-center  '>
-
-                            <div className=' mt-5 p-5 col-lg-10 text-citation citation' >
-                                <div className='' >
-                                    20/01/2024
-                                </div>
-                                <div className='citation-bar'>
-                                    <hr></hr>
-                                </div>
-                                <div className='mt-3 '>
-
-                                    <p>
-                                        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad. "
-
-                                    </p>
-
-                                </div>
-                            </div> */}
-                    {/*<div className='  my-5  col-lg-12 d-flex justify-content-center media'>
-                                {article1.map((value, i) => (
-                                    <div key={i} className='text-white d-flex justify-content-center citation-video'>
-                                        <iframe className='sproutvideo-player ' width={450} height={250} src={value.video?.src.split('?')[0]} allowFullScreen></iframe>
-                                    </div>
-                                ))}
-                                <div className='text-white'>image</div> 
-                            </div>*/}
-
-                    {/* </div>
-                    </div>*/}
+            {citation2 && !play && (
+                <section>
+                    <Citation citationDetails={citation2}/>
                 </section>
             )}
             {article1 && !play && (
