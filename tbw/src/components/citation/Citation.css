@@ -87,6 +87,11 @@
         width: 365px;
         height: 250px;
     }
+    
+    .citation-media img{
+        width: 355px;
+        height: 250px;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
